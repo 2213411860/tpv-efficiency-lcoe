@@ -46,4 +46,4 @@ Literature performance coordinates are retained from the supplied compilation. R
 
 Official deployment documentation: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
-Custom Pout and Qabs sliders are linear, starting at zero. Positive values are required for valid efficiency and LCOE. Bubble area uses 16+2484u pt², where u=(LCOE_max-LCOE)/(LCOE_max-LCOE_min) for the visible scenario. The legend is recalculated from that same range. Equal LCOEs use the midpoint area.
+Custom Pout and Qabs sliders are linear, starting at zero. Positive values are required for valid efficiency and LCOE. Bubble radius uses inverse logarithmic min-max normalization over the visible LCOE range: r is proportional to 4+46u. The legend is recalculated from that same range. Equal LCOEs use the midpoint radius; mixed-zero costs use a logarithmic offset equal to the smallest positive visible cost.

@@ -22,13 +22,18 @@
   function bubbleArea(value,scale) {
     if (!Number.isFinite(value)||value<0) throw new RangeError('Invalid LCOE');
     const low=scale.min_lcoe_dollar_kwh, high=scale.max_lcoe_dollar_kwh;
-    const u=high===low?.5:Math.max(0,Math.min(1,(high-value)/(high-low)));
-    return scale.min_area_pt2+(scale.max_area_pt2-scale.min_area_pt2)*u;
+    const offset=scale.log_offset_dollar_kwh||0;
+    const u=high===low?.5:value<=low?1:value>=high?0:
+      Math.max(0,Math.min(1,(Math.log(high+offset)-Math.log(value+offset))/(Math.log(high+offset)-Math.log(low+offset))));
+    const radius=Math.sqrt(scale.min_area_pt2)+(Math.sqrt(scale.max_area_pt2)-Math.sqrt(scale.min_area_pt2))*u;
+    return radius*radius;
   }
   function bubbleScale(rows,style) {
     const costs=rows.map(row=>row.lcoe_dollar_kwh);
     if(!costs.length||costs.some(n=>!Number.isFinite(n)||n<0))throw new RangeError('Invalid scenario LCOE range');
-    return {...style,min_lcoe_dollar_kwh:Math.min(...costs),max_lcoe_dollar_kwh:Math.max(...costs)};
+    const low=Math.min(...costs),high=Math.max(...costs),positive=costs.filter(n=>n>0);
+    return {...style,min_lcoe_dollar_kwh:low,max_lcoe_dollar_kwh:high,
+      log_offset_dollar_kwh:low===0&&positive.length?Math.min(...positive):0};
   }
   function customRow(c) {
     if(Number(c.power)===0)throw new RangeError('Pout must be greater than 0 to calculate LCOE.');

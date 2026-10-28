@@ -507,9 +507,11 @@
   "bubble_scale": {
     "min_area_pt2": 16,
     "max_area_pt2": 2500,
-    "normalization": "linear min-max of current visible LCOE",
+    "normalization": "inverse log min-max of current visible LCOE",
     "direction": "lower LCOE gives larger area",
-    "equal_lcoe": "all points use the midpoint area"
+    "equal_lcoe": "all points use the midpoint radius",
+    "size_interpolation": "radius linear in normalized value",
+    "zero_lcoe": "shift logarithms by the smallest positive visible LCOE when the range includes zero"
   },
   "compilation_source": {
     "title": "Roux et al. (2024)",

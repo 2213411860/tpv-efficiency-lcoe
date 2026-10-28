@@ -31,10 +31,18 @@ close(scale.max_lcoe_dollar_kwh,Math.max(...visible.map(r=>r.lcoe_dollar_kwh)));
 close(M.bubbleArea(0,scale),2500);
 close(M.bubbleArea(scale.min_lcoe_dollar_kwh,scale),2500);
 close(M.bubbleArea(scale.max_lcoe_dollar_kwh,scale),16);
-close(M.bubbleArea((scale.min_lcoe_dollar_kwh+scale.max_lcoe_dollar_kwh)/2,scale),1258);
+close(M.bubbleArea(Math.sqrt(scale.min_lcoe_dollar_kwh*scale.max_lcoe_dollar_kwh),scale),729);
+const known=M.bubbleScale([.1,1,10].map(n=>({lcoe_dollar_kwh:n})),D.bubble_scale);
+close(M.bubbleArea(1,known),729);
+const mixed=M.bubbleScale([0,1,9].map(n=>({lcoe_dollar_kwh:n})),D.bubble_scale);
+close(M.bubbleArea(0,mixed),2500);close(M.bubbleArea(9,mixed),16);
+close(M.bubbleArea(Math.sqrt(10)-1,mixed),729);
+assert.ok(M.bubbleArea(0,mixed)>M.bubbleArea(1,mixed));
+const linearArea=v=>16+2484*(scale.max_lcoe_dollar_kwh-v)/(scale.max_lcoe_dollar_kwh-scale.min_lcoe_dollar_kwh);
+assert.ok(Math.sqrt(M.bubbleArea(.1,scale)/M.bubbleArea(1,scale))>1.5*Math.sqrt(linearArea(.1)/linearArea(1)));
 for(const value of [0,2]){
   const identical=M.bubbleScale([{lcoe_dollar_kwh:value},{lcoe_dollar_kwh:value}],D.bubble_scale);
-  close(M.bubbleArea(value,identical),1258);
+  close(M.bubbleArea(value,identical),729);
 }
 assert.throws(()=>M.bubbleScale([],D.bubble_scale),RangeError);
 assert.throws(()=>M.bubbleScale([{lcoe_dollar_kwh:Infinity}],D.bubble_scale),RangeError);
