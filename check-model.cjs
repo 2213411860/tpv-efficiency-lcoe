@@ -24,14 +24,22 @@ assert.throws(()=>M.customRow({...custom,power:0}),RangeError);
 assert.throws(()=>M.customRow({...custom,heat:0}),RangeError);
 assert.throws(()=>M.cost(D.records[0],{...settings,cf:0}),RangeError);
 assert.throws(()=>M.cost(D.records[0],{...settings,lcoh:NaN}),RangeError);
-close(M.bubbleArea(0,D.bubble_scale),6400);
-close(M.bubbleArea(D.bubble_scale.min_lcoe_dollar_kwh,D.bubble_scale),6400);
-close(M.bubbleArea(D.bubble_scale.max_lcoe_dollar_kwh,D.bubble_scale),16);
-const oldScale={...D.bubble_scale,min_area_pt2:12,max_area_pt2:1800,exponent:3};
-assert.ok(Math.sqrt(M.bubbleArea(.16,D.bubble_scale)/M.bubbleArea(1.1,D.bubble_scale))>
-  1.4*Math.sqrt(M.bubbleArea(.16,oldScale)/M.bubbleArea(1.1,oldScale)));
+const visible=[...D.records.map(row=>M.cost(row,settings)),M.cost(M.customRow(custom),settings)];
+const scale=M.bubbleScale(visible,D.bubble_scale);
+close(scale.min_lcoe_dollar_kwh,Math.min(...visible.map(r=>r.lcoe_dollar_kwh)));
+close(scale.max_lcoe_dollar_kwh,Math.max(...visible.map(r=>r.lcoe_dollar_kwh)));
+close(M.bubbleArea(0,scale),2500);
+close(M.bubbleArea(scale.min_lcoe_dollar_kwh,scale),2500);
+close(M.bubbleArea(scale.max_lcoe_dollar_kwh,scale),16);
+close(M.bubbleArea((scale.min_lcoe_dollar_kwh+scale.max_lcoe_dollar_kwh)/2,scale),1258);
+for(const value of [0,2]){
+  const identical=M.bubbleScale([{lcoe_dollar_kwh:value},{lcoe_dollar_kwh:value}],D.bubble_scale);
+  close(M.bubbleArea(value,identical),1258);
+}
+assert.throws(()=>M.bubbleScale([],D.bubble_scale),RangeError);
+assert.throws(()=>M.bubbleScale([{lcoe_dollar_kwh:Infinity}],D.bubble_scale),RangeError);
 const costs=[0,.001,.01,.1,1,10,100];
-for(let i=1;i<costs.length;i++)assert.ok(M.bubbleArea(costs[i],D.bubble_scale)<=M.bubbleArea(costs[i-1],D.bubble_scale));
+for(let i=1;i<costs.length;i++)assert.ok(M.bubbleArea(costs[i],scale)<=M.bubbleArea(costs[i-1],scale));
 assert.ok(M.csv([{...M.customRow(custom),work:'=HYPERLINK("bad")'}]).includes("'=HYPERLINK"));
 const scan=fs.readFileSync('./data/lin_si_temperature_scan.csv','utf8').replace(/^\ufeff/,'').trim().split(/\r?\n/);
 const names=scan[0].split(','),ti=names.indexOf('temperature_K'),ci=names.indexOf('selection_lcoe_dollar_kwh');

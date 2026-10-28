@@ -14,10 +14,27 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
   const visit=async page=>{await send('Page.navigate',{url:'http://127.0.0.1:8765/'+page});for(let i=0;i<100;i++){try{if(await evaluate("document.readyState==='complete' && !!document.querySelector('#chart .bubble-point, #data-table tbody tr')"))return;}catch(_){}await sleep(100);}throw new Error('Page did not initialize: '+page);};
   const input=async(id,value,event='input')=>evaluate(`(()=>{const e=document.getElementById(${JSON.stringify(id)});e.value=${JSON.stringify(String(value))};e.dispatchEvent(new Event(${JSON.stringify(event)},{bubbles:true}));return e.value;})()`);
   const count=()=>evaluate("document.querySelectorAll('#chart .bubble-point').length");
+  const checkScale=()=>evaluate(`(()=>{
+    const D=TPVDataset,M=TPVMath,s=JSON.parse(localStorage.getItem('tpv-lab-settings-v2'));
+    const rows=D.records.map(r=>M.cost(r,s));
+    if(s.customEnabled){try{rows.push(M.cost(M.customRow(s.custom),s));}catch(_){}}
+    const scale=M.bubbleScale(rows,D.bubble_scale),chart=document.getElementById('chart');
+    if(Number(chart.dataset.lcoeMin)!==scale.min_lcoe_dollar_kwh||Number(chart.dataset.lcoeMax)!==scale.max_lcoe_dollar_kwh)return false;
+    for(const row of rows){const node=[...chart.querySelectorAll('.bubble-point')].find(n=>n.dataset.id===row.id);
+      const expected=Math.sqrt(M.bubbleArea(row.lcoe_dollar_kwh,scale))*2/3;
+      if(Math.abs(Number(node.querySelector('circle').getAttribute('r'))-expected)>1e-8)return false;}
+    for(const circle of chart.querySelectorAll('.size-legend-circle')){
+      if(Math.abs(Number(circle.getAttribute('r'))-Math.sqrt(M.bubbleArea(Number(circle.dataset.lcoe),scale))*2/3)>1e-8)return false;}
+    return true;
+  })()`);
   await send('Runtime.enable');await send('Page.enable');
   await send('Emulation.setDeviceMetricsOverride',{width:1480,height:1120,deviceScaleFactor:1,mobile:false});
   await visit('index.html');await evaluate("document.getElementById('reset').click()");
   assert.equal(await count(),21);
+  assert.equal(await checkScale(),true);
+  assert.equal(await evaluate("document.querySelector('[data-id=\"lin-model\"] circle').getAttribute('fill')"),'#c62828');
+  assert.equal(await evaluate("document.querySelectorAll('footer a[href=\"data.html\"]').length"),0);
+  assert.equal(await evaluate("document.querySelectorAll('.chart-footer a[href=\"data.html\"]').length"),1);
   assert.equal(await evaluate("document.documentElement.lang"),'en');
   assert.equal(await evaluate("/[\\u4e00-\\u9fff]/.test(document.body.innerText)"),false);
   assert.equal(await evaluate("document.querySelector('#chart').textContent.includes('TPV efficiency')"),true);
@@ -38,9 +55,10 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
   await visit('index.html');assert.equal(await evaluate("document.getElementById('custom-power-number').value"),'0');
   await input('custom-power-range',1);await input('custom-heat-range',0);assert.equal(await count(),20);
   await evaluate("document.getElementById('reset').click()");
-  const before=await evaluate("document.querySelector('[data-id=\"lin-model\"] circle').getAttribute('r')");
+  const before=await evaluate("Number(document.getElementById('chart').dataset.lcoeMax)");
   await input('lcoh-number',10);assert.equal(await evaluate("document.getElementById('lcoh-range').value"),'10');
-  const after=await evaluate("document.querySelector('[data-id=\"lin-model\"] circle').getAttribute('r')");assert.ok(Number(after)<Number(before));
+  const after=await evaluate("Number(document.getElementById('chart').dataset.lcoeMax)");assert.ok(after>before);
+  assert.equal(await checkScale(),true);
   await input('lcoh-number','0.15');assert.equal(await evaluate("document.getElementById('lcoh-number').value"),'0.15');
   await input('cpa-0-range',.4);assert.equal(await evaluate("document.getElementById('cpa-0-number').value"),'0.4');
   assert.equal(await evaluate("document.getElementById('custom-cpa-number').value"),'0.2');
@@ -56,8 +74,10 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
   assert.equal(await count(),20);assert.ok((await evaluate("document.getElementById('custom-error').textContent")).includes('Qabs'));
   await input('custom-heat-number',8);assert.equal(await count(),21);
   await evaluate("document.getElementById('custom-enabled').click()");assert.equal(await count(),20);
+  assert.equal(await checkScale(),true);
   assert.equal(await evaluate("document.getElementById('custom-power-number').disabled"),true);
   await evaluate("document.getElementById('custom-enabled').click()");assert.equal(await count(),21);
+  assert.equal(await checkScale(),true);
   await evaluate("document.querySelector('[data-id=\"ref-1\"]').dispatchEvent(new MouseEvent('click',{bubbles:true}))");
   assert.ok((await evaluate("document.getElementById('selection').textContent")).includes('LaPotin'));
   await visit('data.html');assert.equal(await evaluate("document.querySelectorAll('#data-table tbody tr').length"),21);

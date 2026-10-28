@@ -34,7 +34,7 @@ Open `http://localhost:8765/`.
 
 ## Data and calculation
 
-The chart retains 19 literature coordinates and one Si HJT TPV point predicted in this work. The Si HJT prediction has a dedicated teal color and the custom cell has a dedicated rose color. A custom cell requires only CPA, electrical output power density Pout and absorbed heat density Qabs; efficiency is calculated as Pout/Qabs. No material assignment is required. All literature sources link to their original publisher or author-hosted manuscript.
+The chart retains 19 literature coordinates and one Si HJT TPV point predicted in this work. The Si HJT prediction has a dedicated red color and the custom cell has a dedicated rose color. A custom cell requires only CPA, electrical output power density Pout and absorbed heat density Qabs; efficiency is calculated as Pout/Qabs. No material assignment is required. All literature sources link to their original publisher or author-hosted manuscript.
 
 LCOE = 1000 * CRF * CPA / (8760 * CF * Pout) + (LCOH / 100) / (eta / 100).
 
@@ -46,4 +46,4 @@ Literature performance coordinates are retained from the supplied compilation. R
 
 Official deployment documentation: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
-Custom Pout and Qabs sliders are linear, starting at zero. Positive values are required for valid efficiency and LCOE. The fixed inverse-log bubble mapping uses area 16+6384u^5 pt² to increase visual separation.
+Custom Pout and Qabs sliders are linear, starting at zero. Positive values are required for valid efficiency and LCOE. Bubble area uses 16+2484u pt², where u=(LCOE_max-LCOE)/(LCOE_max-LCOE_min) for the visible scenario. The legend is recalculated from that same range. Equal LCOEs use the midpoint area.

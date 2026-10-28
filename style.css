@@ -21,6 +21,7 @@
 .custom-card .derived{background:#fbf3f6;color:#874057;display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
 .badge.model{background:#e8f3f1;color:#287d75}.badge.custom{background:#faedf2;color:#ae4868}
 .model-row{background:#f3f9f8}.custom-row{background:#fcf4f7}
+.badge.model{background:#fceced;color:#c62828}.model-row{background:#fff6f6}
 @media(max-width:1100px){.equation{font-size:13px}.calculation-card{padding:15px 18px}.equations{gap:3%}}
 @media(max-width:820px){.equations{flex-wrap:wrap;gap:0 28px}.equation{font-size:14px}}
 @media(max-width:520px){.calculation-card{padding:12px 14px;margin-bottom:14px}.equations{display:block}.equation{font-size:12px}.equation .katex-display{text-align:left}.formula-units{font-size:9px;text-align:left;line-height:1.8}.custom-card .derived{font-size:11px}}
