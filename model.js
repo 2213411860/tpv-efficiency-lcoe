@@ -20,20 +20,11 @@
       lcoe_dollar_kwh:capital+thermal};
   }
   function bubbleArea(value,scale) {
+    if (value===0) return scale.max_area_pt2;
     if (!Number.isFinite(value)||value<0) throw new RangeError('Invalid LCOE');
-    const low=scale.min_lcoe_dollar_kwh, high=scale.max_lcoe_dollar_kwh;
-    const offset=scale.log_offset_dollar_kwh||0;
-    const u=high===low?.5:value<=low?1:value>=high?0:
-      Math.max(0,Math.min(1,(Math.log(high+offset)-Math.log(value+offset))/(Math.log(high+offset)-Math.log(low+offset))));
-    const radius=Math.sqrt(scale.min_area_pt2)+(Math.sqrt(scale.max_area_pt2)-Math.sqrt(scale.min_area_pt2))*u;
-    return radius*radius;
-  }
-  function bubbleScale(rows,style) {
-    const costs=rows.map(row=>row.lcoe_dollar_kwh);
-    if(!costs.length||costs.some(n=>!Number.isFinite(n)||n<0))throw new RangeError('Invalid scenario LCOE range');
-    const low=Math.min(...costs),high=Math.max(...costs),positive=costs.filter(n=>n>0);
-    return {...style,min_lcoe_dollar_kwh:low,max_lcoe_dollar_kwh:high,
-      log_offset_dollar_kwh:low===0&&positive.length?Math.min(...positive):0};
+    const low=Math.log10(scale.min_lcoe_dollar_kwh), high=Math.log10(scale.max_lcoe_dollar_kwh);
+    const u=Math.max(0,Math.min(1,(high-Math.log10(value))/(high-low)));
+    return scale.min_area_pt2+(scale.max_area_pt2-scale.min_area_pt2)*Math.pow(u,scale.exponent);
   }
   function customRow(c) {
     if(Number(c.power)===0)throw new RangeError('Pout must be greater than 0 to calculate LCOE.');
@@ -58,7 +49,7 @@
     };
     return '\ufeff'+[keys.join(','),...rows.map(row=>keys.map(k=>quote(row[k])).join(','))].join('\r\n');
   }
-  const api={materials,cost,bubbleArea,bubbleScale,customRow,csv};
+  const api={materials,cost,bubbleArea,customRow,csv};
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
   root.TPVMath=api;
 })(globalThis);

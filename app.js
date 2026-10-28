@@ -92,11 +92,11 @@
     const xmax=highestEfficiency<=42?45:Math.ceil((highestEfficiency+3)/10)*10;
     const ymin=Math.min(.045,Math.min(...current.map(r=>r.p_out_W_cm2))*.55),ymax=Math.max(13,Math.max(...current.map(r=>r.p_out_W_cm2))*1.7);
     const x=n=>x0+n/xmax*w,y=n=>y0+h-(Math.log10(n)-Math.log10(ymin))/(Math.log10(ymax)-Math.log10(ymin))*h;
-    const scale=M.bubbleScale(current,D.bubble_scale);
+    const scale=D.bubble_scale;
     const radius=n=>Math.sqrt(M.bubbleArea(n,scale))/2*96/72;
     $('chart').setAttribute('data-lcoe-min',scale.min_lcoe_dollar_kwh);
     $('chart').setAttribute('data-lcoe-max',scale.max_lcoe_dollar_kwh);
-    const parts=[`<title>TPV efficiency and electrical power density</title><desc>Bubble radii use inverse logarithmic min-max normalization of the current LCOE range ${scale.min_lcoe_dollar_kwh} to ${scale.max_lcoe_dollar_kwh} dollars per kilowatt-hour, with lower LCOE shown larger. Heat price ${state.lcoh} cents per kWh thermal; capacity factor ${state.cf}.</desc><rect width="920" height="585" fill="white"/><g fill="#111" stroke="none" font-family="'Times New Roman',serif" font-weight="bold"><rect x="${x0}" y="${y0}" width="${w}" height="${h}" fill="none" stroke="#171717" stroke-width="1.2"/>`];
+    const parts=[`<title>TPV efficiency and electrical power density</title><desc>Bubble areas use a fixed absolute-LCOE scale over the reference range ${scale.min_lcoe_dollar_kwh} to ${scale.max_lcoe_dollar_kwh} dollars per kilowatt-hour, with lower LCOE shown larger. Heat price ${state.lcoh} cents per kWh thermal; capacity factor ${state.cf}.</desc><rect width="920" height="585" fill="white"/><g fill="#111" stroke="none" font-family="'Times New Roman',serif" font-weight="bold"><rect x="${x0}" y="${y0}" width="${w}" height="${h}" fill="none" stroke="#171717" stroke-width="1.2"/>`];
     const xstep=xmax<=50?10:20;
     for(let t=0;t<=xmax;t+=xstep)parts.push(`<path d="M${x(t)},${y0+h}v6" stroke="#111" stroke-width="1.1"/><text x="${x(t)}" y="${y0+h+25}" text-anchor="middle" font-size="16">${t}</text>`);
     for(let p=Math.ceil(Math.log10(ymin));p<=Math.floor(Math.log10(ymax));p++)parts.push(`<path d="M${x0-6},${y(10**p)}h6" stroke="#111" stroke-width="1.1"/><text x="${x0-13}" y="${y(10**p)+5}" text-anchor="end" font-size="16">10<tspan baseline-shift="super" font-size="11">${p}</tspan></text>`);
@@ -119,15 +119,12 @@
       parts.push(`<circle cx="748" cy="${cy}" r="4.3" fill="${pointColors[item.kind]}" stroke="#111" stroke-width=".5"/><text x="763" y="${cy+5}" font-size="14">${item.label}${item.kind==='model'?'<tspan x="763" dy="17" font-size="13">(this work)</tspan>':''}</text>`);
     });
     parts.push('<text x="737" y="352" font-size="16">LCOE ($ kWh<tspan baseline-shift="super" font-size="10">−1</tspan><tspan baseline-shift="sub" font-size="10">e</tspan>)</text>');
-    const offset=scale.log_offset_dollar_kwh;
-    const values=scale.min_lcoe_dollar_kwh===scale.max_lcoe_dollar_kwh?[scale.min_lcoe_dollar_kwh]:
-      [scale.min_lcoe_dollar_kwh,Math.exp((Math.log(scale.min_lcoe_dollar_kwh+offset)+Math.log(scale.max_lcoe_dollar_kwh+offset))/2)-offset,scale.max_lcoe_dollar_kwh];
-    const cx=770,bottom=482,radii=values.map(radius);let last=-Infinity;
+    const values=[.16,1.1,5.4],cx=770,bottom=443,radii=values.map(radius);let last=-Infinity;
     values.forEach((cost,i)=>{
       const r=radii[i],top=bottom-2*r,ly=Math.max(top,last+18);last=ly;
       parts.push(`<circle class="size-legend-circle" data-lcoe="${cost}" cx="${cx}" cy="${bottom-r}" r="${r}" fill="none" stroke="#777" stroke-width=".9"/><path d="M${cx},${top}H${cx+radii[0]+8}L846,${ly}" fill="none" stroke="#8a8a8a" stroke-width=".7"/><text x="853" y="${ly+4}" font-size="14">${fmt(cost,3)}</text>`);
     });
-    parts.push('<text x="739" y="522" font-size="11" fill="#82818a" font-weight="normal">Larger bubble = lower LCOE</text></g>');$('chart').innerHTML=parts.join('');
+    parts.push('<text x="739" y="482" font-size="11" fill="#82818a" font-weight="normal">Larger bubble = lower LCOE</text></g>');$('chart').innerHTML=parts.join('');
     $('chart').querySelectorAll('.bubble-point').forEach(node=>{
       const row=current.find(r=>r.id===node.dataset.id);
       node.addEventListener('click',()=>{selected=row.id;renderChart();renderSelection();});

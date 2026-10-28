@@ -46,4 +46,4 @@ Literature performance coordinates are retained from the supplied compilation. R
 
 Official deployment documentation: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
-Custom Pout and Qabs sliders are linear, starting at zero. Positive values are required for valid efficiency and LCOE. Bubble radius uses inverse logarithmic min-max normalization over the visible LCOE range: r is proportional to 4+46u. The legend is recalculated from that same range. Equal LCOEs use the midpoint radius; mixed-zero costs use a logarithmic offset equal to the smallest positive visible cost.
+Custom Pout and Qabs sliders are linear, starting at zero. Positive values are required for valid efficiency and LCOE. Bubble sizes use the original fixed absolute-LCOE mapping: area 16+6384u^5 pt^2, with inverse-normalized log10(LCOE) over the fixed reference cost range 0.016732909892269422 to 23.9068864465346 dollars/kWh. The same LCOE always gives the same size. Legend values are fixed at 0.16, 1.1 and 5.4 dollars/kWh.

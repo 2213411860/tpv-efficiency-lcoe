@@ -505,13 +505,11 @@ globalThis.TPVDataset = {
   "crf": 0.074,
   "hours_per_year": 8760,
   "bubble_scale": {
+    "min_lcoe_dollar_kwh": 0.016732909892269422,
+    "max_lcoe_dollar_kwh": 23.9068864465346,
     "min_area_pt2": 16,
-    "max_area_pt2": 2500,
-    "normalization": "inverse log min-max of current visible LCOE",
-    "direction": "lower LCOE gives larger area",
-    "equal_lcoe": "all points use the midpoint radius",
-    "size_interpolation": "radius linear in normalized value",
-    "zero_lcoe": "shift logarithms by the smallest positive visible LCOE when the range includes zero"
+    "max_area_pt2": 6400,
+    "exponent": 5
   },
   "compilation_source": {
     "title": "Roux et al. (2024)",
