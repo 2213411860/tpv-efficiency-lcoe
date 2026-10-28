@@ -27,6 +27,8 @@
     return scale.min_area_pt2+(scale.max_area_pt2-scale.min_area_pt2)*Math.pow(u,scale.exponent);
   }
   function customRow(c) {
+    if(Number(c.power)===0)throw new RangeError('Pout must be greater than 0 to calculate LCOE.');
+    if(Number(c.heat)===0)throw new RangeError('Qabs must be greater than 0 to calculate efficiency.');
     const power=finite(c.power,'Output power density',0,1000000,true);
     const q=finite(c.heat,'Absorbed heat density',0,1000000,true);
     if(q<power) throw new RangeError('Absorbed heat Qabs must be at least electrical output Pout');

@@ -24,3 +24,46 @@
 @media(max-width:1100px){.equation{font-size:13px}.calculation-card{padding:15px 18px}.equations{gap:3%}}
 @media(max-width:820px){.equations{flex-wrap:wrap;gap:0 28px}.equation{font-size:14px}}
 @media(max-width:520px){.calculation-card{padding:12px 14px;margin-bottom:14px}.equations{display:block}.equation{font-size:12px}.equation .katex-display{text-align:left}.formula-units{font-size:9px;text-align:left;line-height:1.8}.custom-card .derived{font-size:11px}}
+
+/* Readable interface type; SVG chart typography retains the paper template. */
+body{font-size:16px}
+nav a{font-size:15px}
+.page-heading h1{font-size:clamp(25px,2.2vw,34px)}
+.button{font-size:15px;padding:10px 16px}.button.small{font-size:14px;padding:8px 12px}
+.card-heading h2{font-size:24px}.card-heading p{font-size:15px}
+.scenario-strip{font-size:14px;gap:18px}
+.section-title h2{font-size:17px}.section-title .unit{font-size:13px}
+.control-label{font-size:15px;line-height:1.4}
+.control-top{flex-wrap:wrap;gap:7px 10px}
+.control-value{font-size:12px;flex-shrink:0}.control-value>span{white-space:nowrap}
+.control-value input{font-size:16px;width:86px;padding:6px 8px}
+input[type=range]{height:21px}.range-limits{font-size:12px}
+.slider-control{margin:18px 0}.material-dot{width:9px;height:9px}
+.presets{font-size:13px;gap:8px;flex-wrap:wrap}.presets button{font-size:13px;padding:4px 9px}
+.compact-note{font-size:13px}
+.calculation-card h2{font-size:16px}.equation{font-size:19px}.formula-units{font-size:13px;line-height:1.8}
+.selection{padding-top:18px;padding-bottom:18px}
+.selection-head{font-size:15px}.selection-head strong{font-size:17px}.badge{font-size:12px}
+.selection-values{font-size:14px;gap:14px 22px}.selection-values b{font-size:20px}
+.selection-source{font-size:14px}.selection-source:empty{display:none}
+.chart-footer{font-size:14px}.scale-note{font-size:13px}
+.custom-card .derived{font-size:14px;padding:12px}.error{font-size:14px}
+.switch input{width:38px;height:23px}.switch span{width:38px;height:23px}.switch span:after{width:17px;height:17px}.switch input:checked+span:after{transform:translateX(15px)}
+.tooltip{font-size:14px;max-width:360px}.tooltip strong{font-size:16px}.tooltip .tooltip-cost{font-size:22px}
+.toast{font-size:15px}
+.search-label input{font-size:15px;width:280px}
+table{font-size:14px}th{font-size:13px}.table-count{font-size:14px}
+.data-info-grid h2{font-size:21px}.data-info-grid p,.source-item{font-size:15px}
+footer{font-size:13px}
+@media(max-width:1100px){.equation{font-size:17px}.control-label{font-size:14px}}
+@media(max-width:820px){.equations{gap:0 28px}.equation{font-size:18px}.search-label,.search-label input{width:100%}}
+@media(max-width:520px){
+  nav a{font-size:13px}nav{gap:14px}.topbar{gap:16px}
+  .page-heading h1{font-size:25px}.page-heading .button{font-size:14px}
+  .card-heading h2{font-size:21px}.card-heading p{font-size:14px}.card-heading{flex-wrap:wrap}
+  .scenario-strip{font-size:13px}.control-label{font-size:15px}
+  .equation{font-size:14px}.formula-units{font-size:12px}
+  .selection-head strong{font-size:16px}.selection-values b{font-size:18px}
+  .custom-card .derived{font-size:14px}.data-actions .button{font-size:14px}
+  .chart-wrap:after{font-size:13px}.chart-footer{font-size:14px}footer{font-size:12px}
+}

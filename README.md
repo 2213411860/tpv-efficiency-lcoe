@@ -34,14 +34,16 @@ Open `http://localhost:8765/`.
 
 ## Data and calculation
 
-The chart retains 19 literature coordinates and one Lin-based Si TPV model point. Lin has a dedicated teal color and the custom cell has a dedicated rose color. A custom cell requires only CPA, electrical output power density Pout and absorbed heat density Qabs; efficiency is calculated as Pout/Qabs. No material assignment is required. All literature sources link to their original publisher or author-hosted manuscript.
+The chart retains 19 literature coordinates and one Si HJT TPV point predicted in this work. The Si HJT prediction has a dedicated teal color and the custom cell has a dedicated rose color. A custom cell requires only CPA, electrical output power density Pout and absorbed heat density Qabs; efficiency is calculated as Pout/Qabs. No material assignment is required. All literature sources link to their original publisher or author-hosted manuscript.
 
 LCOE = 1000 * CRF * CPA / (8760 * CF * Pout) + (LCOH / 100) / (eta / 100).
 
 Units: LCOE $/kWh_e; LCOH cents/kWh_th; CPA $/cm2; Pout W/cm2; eta percent. CRF is fixed at 0.074.
 
-The Lin point is a TPV model prediction based on solar-cell parameters, not a TPV measurement from the original paper. It is selected at the maximum baseline LCOE among 51 Si temperatures: 1600 K, eta = 18.3670331394%, Pout = 0.224289070919 W/cm2. The temperature remains fixed when changing economic inputs.
+The Si HJT point is a TPV model prediction based on solar-cell parameters, not a TPV measurement from the original paper. It is selected at the maximum baseline LCOE among 51 Si temperatures: 1600 K, eta = 18.3670331394%, Pout = 0.224289070919 W/cm2. The temperature remains fixed when changing economic inputs.
 
 Literature performance coordinates are retained from the supplied compilation. Reported projections are noted in the record metadata. Only cell capital and heat costs are included.
 
 Official deployment documentation: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+
+Custom Pout and Qabs sliders are linear, starting at zero. Positive values are required for valid efficiency and LCOE. The fixed inverse-log bubble mapping uses area 16+6384u^5 pt² to increase visual separation.

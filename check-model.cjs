@@ -24,9 +24,12 @@ assert.throws(()=>M.customRow({...custom,power:0}),RangeError);
 assert.throws(()=>M.customRow({...custom,heat:0}),RangeError);
 assert.throws(()=>M.cost(D.records[0],{...settings,cf:0}),RangeError);
 assert.throws(()=>M.cost(D.records[0],{...settings,lcoh:NaN}),RangeError);
-close(M.bubbleArea(0,D.bubble_scale),1800);
-close(M.bubbleArea(D.bubble_scale.min_lcoe_dollar_kwh,D.bubble_scale),1800);
-close(M.bubbleArea(D.bubble_scale.max_lcoe_dollar_kwh,D.bubble_scale),12);
+close(M.bubbleArea(0,D.bubble_scale),6400);
+close(M.bubbleArea(D.bubble_scale.min_lcoe_dollar_kwh,D.bubble_scale),6400);
+close(M.bubbleArea(D.bubble_scale.max_lcoe_dollar_kwh,D.bubble_scale),16);
+const oldScale={...D.bubble_scale,min_area_pt2:12,max_area_pt2:1800,exponent:3};
+assert.ok(Math.sqrt(M.bubbleArea(.16,D.bubble_scale)/M.bubbleArea(1.1,D.bubble_scale))>
+  1.4*Math.sqrt(M.bubbleArea(.16,oldScale)/M.bubbleArea(1.1,oldScale)));
 const costs=[0,.001,.01,.1,1,10,100];
 for(let i=1;i<costs.length;i++)assert.ok(M.bubbleArea(costs[i],D.bubble_scale)<=M.bubbleArea(costs[i-1],D.bubble_scale));
 assert.ok(M.csv([{...M.customRow(custom),work:'=HYPERLINK("bad")'}]).includes("'=HYPERLINK"));

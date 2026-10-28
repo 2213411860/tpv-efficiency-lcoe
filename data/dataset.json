@@ -461,8 +461,8 @@
     {
       "id": "lin-model",
       "table_id": null,
-      "label": "Lin",
-      "work": "Lin et al. (2023) · TPV model",
+      "label": "This work",
+      "work": "Si HJT cell predicted in this work",
       "cell_type": "Si",
       "emitter_temperature_C": 1326.85,
       "emitter_temperature_K": 1600.0,
@@ -478,8 +478,8 @@
       "source_doi": "10.1038/s41560-023-01255-2",
       "source_publisher": "Springer Science and Business Media LLC",
       "source_verification": "https://api.crossref.org/works/10.1038/s41560-023-01255-2",
-      "source_note": "TPV prediction from the project variable-Rs three-diode model, using a selective emitter (in-band emissivity 0.7, out-of-band 0.1), view factor 0.5 and cell temperature 300 K. Not a TPV experiment reported by Lin et al.",
-      "paper_key": "Lin et al. (2023), model extrapolation",
+      "source_note": "TPV prediction from the project variable-Rs three-diode model, using a selective emitter (in-band emissivity 0.7, out-of-band 0.1), view factor 0.5 and cell temperature 300 K. Not a TPV measurement from the source solar-cell paper.",
+      "paper_key": "Si HJT prediction in this work",
       "near_field": false,
       "selected_representative": true,
       "reference_lcoe_dollar_kwh": 0.06197805425892411,
@@ -507,9 +507,9 @@
   "bubble_scale": {
     "min_lcoe_dollar_kwh": 0.016732909892269422,
     "max_lcoe_dollar_kwh": 23.9068864465346,
-    "min_area_pt2": 12,
-    "max_area_pt2": 1800,
-    "exponent": 3
+    "min_area_pt2": 16,
+    "max_area_pt2": 6400,
+    "exponent": 5
   },
   "compilation_source": {
     "title": "Roux et al. (2024)",

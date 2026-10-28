@@ -17,7 +17,8 @@
       // Preserve the performance of a previously saved efficiency-mode cell.
       if(candidate.custom.mode==='efficiency')candidate.custom.heat=100*candidate.custom.power/candidate.custom.eta;
       candidate.custom={cpa:candidate.custom.cpa,power:candidate.custom.power,heat:candidate.custom.heat};
-      D.records.forEach(r=>M.cost(r,candidate)); M.customRow(candidate.custom);
+      D.records.forEach(r=>M.cost(r,candidate));
+      if(Object.values(candidate.custom).some(v=>!Number.isFinite(Number(v))||Number(v)<0||Number(v)>1000000))throw new RangeError('Invalid saved custom inputs');
       state=candidate;
     }
   }catch(_){/* Storage is optional, including file:// and private browsing. */}
@@ -57,7 +58,7 @@
     control($('economic-controls'),{id:'cf',label:'Capacity factor, CF',min:.01,max:1,step:.01,get:()=>state.cf,set:v=>state.cf=v});
     M.materials.forEach((material,i)=>control($('cpa-controls'),{id:'cpa-'+i,label:material,min:0,max:material==='Si'?2:100,step:material==='Si'?.01:.1,color:D.colors[material],get:()=>state.cpa[material],set:v=>state.cpa[material]=v}));
     const configs=[['cpa','Cell area cost, CPA','$/cm²',0,100,.01,false],
-      ['power','Output power, Pout','W/cm²',.000001,10,.000001,true],['heat','Absorbed heat, Qabs','W/cm²',.000001,50,.000001,true]];
+      ['power','Output power, Pout','W/cm²',0,10,.001,false],['heat','Absorbed heat, Qabs','W/cm²',0,50,.001,false]];
     configs.forEach(([key,label,unit,min,max,step,log])=>control($('custom-controls'),{id:'custom-'+key,label,unit,min,max,step,log,get:()=>state.custom[key],set:v=>state.custom[key]=v}));
     $('custom-enabled').addEventListener('change',e=>{state.customEnabled=e.target.checked;syncAll();update();});
     document.querySelectorAll('[data-heat]').forEach(b=>b.addEventListener('click',()=>{state.lcoh=Number(b.dataset.heat);controls.get('lcoh').sync();update();}));
@@ -78,11 +79,11 @@
     const row=current.find(r=>r.id==='custom');
     $('custom-derived').innerHTML=row?`<span>η <strong>${fmt(row.eta_pair_pct,5)}%</strong></span><span>LCOE <strong>$${fmt(row.lcoe_dollar_kwh,5)}</strong> /kWh<sub>e</sub></span>`:(state.customEnabled?'Correct the inputs to show the custom cell.':'Custom cell hidden.');
   }
-  const badge=r=>r.kind==='model'?'Model':r.kind==='custom'?'Custom':'Literature';
+  const badge=r=>r.kind==='model'?'Prediction':r.kind==='custom'?'Custom':'Literature';
   function renderSelection(){
     const r=current.find(r=>r.id===selected);
     const cellInfo=r.kind==='custom'?'':`<span>${esc(r.cell_type)} · ${fmt(r.emitter_temperature_K,6)} K</span>`;
-    $('selection').innerHTML=`<div class="selection-head"><strong>${esc(r.work)}</strong><span class="badge ${r.kind}">${badge(r)}</span>${cellInfo}</div><div class="selection-values"><span><b>${fmt(r.eta_pair_pct,4)}%</b>η</span><span><b>${fmt(r.p_out_W_cm2,4)}</b>W/cm²</span><span><b>$${fmt(r.lcoe_dollar_kwh,4)}</b>/kWh<sub>e</sub></span><span>Cell $${fmt(r.lcoe_cell_dollar_kwh,3)} + heat $${fmt(r.lcoe_heat_dollar_kwh,3)}</span></div><div class="selection-source">${r.kind==='model'?'TPV model based on Lin et al.; fixed at 1600 K.':r.kind==='custom'?'':esc(r.source_title||'')} ${r.source_url?`<a href="${esc(r.source_url)}" target="_blank" rel="noopener noreferrer">Original publication ↗</a>`:''}</div>`;
+    $('selection').innerHTML=`<div class="selection-head"><strong>${esc(r.work)}</strong><span class="badge ${r.kind}">${badge(r)}</span>${cellInfo}</div><div class="selection-values"><span><b>${fmt(r.eta_pair_pct,4)}%</b>η</span><span><b>${fmt(r.p_out_W_cm2,4)}</b>W/cm²</span><span><b>$${fmt(r.lcoe_dollar_kwh,4)}</b>/kWh<sub>e</sub></span><span>Cell $${fmt(r.lcoe_cell_dollar_kwh,3)} + heat $${fmt(r.lcoe_heat_dollar_kwh,3)}</span></div><div class="selection-source">${r.kind==='model'?'Si HJT TPV prediction in this work; fixed at 1600 K.':r.kind==='custom'?'':esc(r.source_title||'')} ${r.source_url?`<a href="${esc(r.source_url)}" target="_blank" rel="noopener noreferrer">Original publication ↗</a>`:''}</div>`;
   }
   function renderChart(){
     $('heat-readout').textContent=fmt(state.lcoh,5);$('cf-readout').textContent=state.cf.toFixed(2);$('point-count').textContent=current.length+' points';
@@ -109,17 +110,18 @@
       parts.push(`<text x="${x(r.eta_pair_pct)+dx}" y="${y(r.p_out_W_cm2)+dy}" font-size="${r.kind==='literature'?12:13}" fill="${r.kind==='literature'?'#111':colorOf(r)}" pointer-events="none">${esc(r.label)}</text>`);
     });
     M.materials.forEach((m,i)=>parts.push(`<circle cx="748" cy="${61+i*32}" r="4.3" fill="${D.colors[m]}" stroke="#111" stroke-width=".5"/><text x="763" y="${66+i*32}" font-size="14">${esc(m==='III-V multijunction'?'III-V multi-junction':m)}</text>`));
-    [{kind:'model',label:'Lin (model)'},{kind:'custom',label:'Custom'}].forEach((item,i)=>{
+    [{kind:'model',label:'Si HJT cell'},{kind:'custom',label:'Custom'}].forEach((item,i)=>{
       if(item.kind==='custom'&&!state.customEnabled)return;
-      parts.push(`<circle cx="748" cy="${253+i*32}" r="4.3" fill="${pointColors[item.kind]}" stroke="#111" stroke-width=".5"/><text x="763" y="${258+i*32}" font-size="14">${item.label}</text>`);
+      const cy=item.kind==='model'?253:303;
+      parts.push(`<circle cx="748" cy="${cy}" r="4.3" fill="${pointColors[item.kind]}" stroke="#111" stroke-width=".5"/><text x="763" y="${cy+5}" font-size="14">${item.label}${item.kind==='model'?'<tspan x="763" dy="17" font-size="13">(this work)</tspan>':''}</text>`);
     });
-    parts.push('<text x="737" y="334" font-size="16">LCOE ($ kWh<tspan baseline-shift="super" font-size="10">−1</tspan><tspan baseline-shift="sub" font-size="10">e</tspan>)</text>');
-    const values=[.16,1.1,5.4],cx=770,bottom=425,radii=values.map(radius);let last=-Infinity;
+    parts.push('<text x="737" y="352" font-size="16">LCOE ($ kWh<tspan baseline-shift="super" font-size="10">−1</tspan><tspan baseline-shift="sub" font-size="10">e</tspan>)</text>');
+    const values=[.16,1.1,5.4],cx=770,bottom=443,radii=values.map(radius);let last=-Infinity;
     values.forEach((cost,i)=>{
       const r=radii[i],top=bottom-2*r,ly=Math.max(top,last+18);last=ly;
       parts.push(`<circle cx="${cx}" cy="${bottom-r}" r="${r}" fill="none" stroke="#777" stroke-width=".9"/><path d="M${cx},${top}H${cx+radii[0]+8}L846,${ly}" fill="none" stroke="#8a8a8a" stroke-width=".7"/><text x="853" y="${ly+4}" font-size="14">${cost}</text>`);
     });
-    parts.push('<text x="739" y="464" font-size="11" fill="#82818a" font-weight="normal">Larger bubble = lower LCOE</text></g>');$('chart').innerHTML=parts.join('');
+    parts.push('<text x="739" y="482" font-size="11" fill="#82818a" font-weight="normal">Larger bubble = lower LCOE</text></g>');$('chart').innerHTML=parts.join('');
     const outside=current.filter(r=>r.lcoe_dollar_kwh<D.bubble_scale.min_lcoe_dollar_kwh||r.lcoe_dollar_kwh>D.bubble_scale.max_lcoe_dollar_kwh).length;
     $('scale-note').textContent=outside?`${outside} point(s) exceed the fixed bubble scale; numerical LCOE values are unchanged.`:'';
     $('chart').querySelectorAll('.bubble-point').forEach(node=>{
