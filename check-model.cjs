@@ -13,12 +13,15 @@ for(const row of D.records){
   const lowCF=M.cost(row,{...settings,cf:.5});close(lowCF.lcoe_cell_dollar_kwh,c.lcoe_cell_dollar_kwh*2);
   const free=M.cost(row,{lcoh:0,cf:1,cpa:{...D.default_cpa,[row.cell_type]:0}});close(free.lcoe_dollar_kwh,0);
 }
-const custom={name:'Custom cell',material:'Si',cpa:7,eta:25,power:2,heat:8,temperature:1800,mode:'efficiency'};
+const custom={cpa:7,power:2,heat:8};
 close(M.cost(M.customRow(custom),settings).CPA_dollar_cm2,7);
-close(M.customRow({...custom,mode:'heat'}).eta_pair_pct,25);
-assert.throws(()=>M.customRow({...custom,mode:'heat',heat:1}),RangeError);
+close(M.customRow(custom).eta_pair_pct,25);
+close(M.cost(M.customRow({...custom,heat:16}),settings).lcoe_heat_dollar_kwh,.08);
+assert.equal(M.customRow(custom).cell_type,'Custom');
+assert.equal(M.customRow(custom).emitter_temperature_K,null);
+assert.throws(()=>M.customRow({...custom,heat:1}),RangeError);
 assert.throws(()=>M.customRow({...custom,power:0}),RangeError);
-assert.throws(()=>M.customRow({...custom,eta:101}),RangeError);
+assert.throws(()=>M.customRow({...custom,heat:0}),RangeError);
 assert.throws(()=>M.cost(D.records[0],{...settings,cf:0}),RangeError);
 assert.throws(()=>M.cost(D.records[0],{...settings,lcoh:NaN}),RangeError);
 close(M.bubbleArea(0,D.bubble_scale),1800);
@@ -33,4 +36,4 @@ const simpleRows=scan.slice(1).map(line=>line.split(','));
 const maxRow=simpleRows.reduce((a,b)=>Number(a[ci])>Number(b[ci])?a:b);
 assert.equal(simpleRows.length,51);assert.equal(Number(maxRow[ti]),D.lin_selection.temperature_K);
 close(Number(maxRow[ci]),D.lin_selection.selected_lcoe_dollar_kwh);
-console.log('PASS: 20 baseline costs; capital/heat decomposition; heat, CF and zero-cost scenarios; custom-cell independence and heat mode; invalid input rejection; monotonic bubble scale; CSV escaping; maximum-LCOE selection over 51 temperatures.');
+console.log('PASS: 20 baseline costs; capital/heat decomposition; heat, CF and zero-cost scenarios; custom CPA independence and Pout/Qabs efficiency; invalid input rejection; monotonic bubble scale; CSV escaping; maximum-LCOE selection over 51 temperatures.');

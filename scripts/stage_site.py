@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parent.parent
 OUT=ROOT/'_site'
 OUT.mkdir(exist_ok=True)
 files=['index.html','data.html','app.js','model.js','data.js','style.css','.nojekyll']
-paths=[ROOT/name for name in files]+[p for p in (ROOT/'data').rglob('*') if p.is_file()]
+paths=[ROOT/name for name in files]+[p for folder in ['data','vendor'] for p in (ROOT/folder).rglob('*') if p.is_file()]
 for source in paths:
     assert source.is_file() and not source.is_symlink(),source
     relative=source.relative_to(ROOT)

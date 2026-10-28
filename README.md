@@ -10,7 +10,7 @@ Interactive thermophotovoltaic efficiency, electrical power density and levelize
 - `model.js`: LCOE calculations and numerical validation.
 - `app.js`: controls, SVG rendering and CSV/SVG exports.
 
-The application is static HTML/CSS/JavaScript and has no external runtime dependencies.
+The application is static HTML/CSS/JavaScript. KaTeX 0.19.1 and its fonts are bundled under `vendor/katex/` (MIT license) for LaTeX formula rendering; the browser does not need an external CDN.
 
 ## GitHub Pages
 
@@ -34,7 +34,7 @@ Open `http://localhost:8765/`.
 
 ## Data and calculation
 
-The chart retains 19 literature coordinates and one Lin-based Si TPV model point. A custom cell can be edited separately. All literature sources link to their original publisher or author-hosted manuscript.
+The chart retains 19 literature coordinates and one Lin-based Si TPV model point. Lin has a dedicated teal color and the custom cell has a dedicated rose color. A custom cell requires only CPA, electrical output power density Pout and absorbed heat density Qabs; efficiency is calculated as Pout/Qabs. No material assignment is required. All literature sources link to their original publisher or author-hosted manuscript.
 
 LCOE = 1000 * CRF * CPA / (8760 * CF * Pout) + (LCOH / 100) / (eta / 100).
 

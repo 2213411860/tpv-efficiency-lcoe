@@ -28,17 +28,11 @@
   }
   function customRow(c) {
     const power=finite(c.power,'Output power density',0,1000000,true);
-    let eta=finite(c.eta,'Efficiency',0,100,true);
-    if(c.mode==='heat') {
-      const q=finite(c.heat,'Absorbed heat density',0,1000000,true);
-      if(q<power) throw new RangeError('Absorbed heat Qabs must be at least electrical output Pout');
-      eta=100*power/q;
-    }
-    if(!materials.includes(c.material)) throw new RangeError('Select a valid cell material');
-    const t=finite(c.temperature,'Emitter temperature',0,100000);
-    return {id:'custom',table_id:null,label:'Custom',work:String(c.name||'Custom cell').slice(0,100),
-      cell_type:c.material,emitter_temperature_K:t,emitter_temperature_C:t-273.15,
-      eta_pair_pct:eta,p_out_W_cm2:power,CPA_dollar_cm2:finite(c.cpa,'CPA',0,1000000),
+    const q=finite(c.heat,'Absorbed heat density',0,1000000,true);
+    if(q<power) throw new RangeError('Absorbed heat Qabs must be at least electrical output Pout');
+    return {id:'custom',table_id:null,label:'Custom',work:'Custom cell',
+      cell_type:'Custom',emitter_temperature_K:null,emitter_temperature_C:null,
+      eta_pair_pct:100*power/q,p_out_W_cm2:power,CPA_dollar_cm2:finite(c.cpa,'CPA',0,1000000),
       kind:'custom',source_url:'',source_note:'User-defined cell; not a literature experiment.',source_file:'',
       paper_key:'custom',near_field:false,selected_representative:true};
   }
