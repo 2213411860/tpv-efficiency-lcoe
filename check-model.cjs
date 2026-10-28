@@ -1,0 +1,36 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const M=require('./model.js');
+const D=JSON.parse(fs.readFileSync('./data/dataset.json','utf8'));
+const settings={lcoh:1,cf:1,cpa:D.default_cpa};
+const close=(a,b)=>assert.ok(Math.abs(a-b)<1e-11*Math.max(1,Math.abs(b)),`${a} != ${b}`);
+assert.equal(D.records.length,20);
+for(const row of D.records){
+  const c=M.cost(row,settings);close(c.lcoe_dollar_kwh,row.reference_lcoe_dollar_kwh);
+  close(c.lcoe_dollar_kwh,c.lcoe_cell_dollar_kwh+c.lcoe_heat_dollar_kwh);
+  close(c.p_abs_W_cm2,c.p_out_W_cm2/(c.eta_pair_pct/100));
+  const hot=M.cost(row,{...settings,lcoh:10});close(hot.lcoe_heat_dollar_kwh,c.lcoe_heat_dollar_kwh*10);
+  const lowCF=M.cost(row,{...settings,cf:.5});close(lowCF.lcoe_cell_dollar_kwh,c.lcoe_cell_dollar_kwh*2);
+  const free=M.cost(row,{lcoh:0,cf:1,cpa:{...D.default_cpa,[row.cell_type]:0}});close(free.lcoe_dollar_kwh,0);
+}
+const custom={name:'Custom cell',material:'Si',cpa:7,eta:25,power:2,heat:8,temperature:1800,mode:'efficiency'};
+close(M.cost(M.customRow(custom),settings).CPA_dollar_cm2,7);
+close(M.customRow({...custom,mode:'heat'}).eta_pair_pct,25);
+assert.throws(()=>M.customRow({...custom,mode:'heat',heat:1}),RangeError);
+assert.throws(()=>M.customRow({...custom,power:0}),RangeError);
+assert.throws(()=>M.customRow({...custom,eta:101}),RangeError);
+assert.throws(()=>M.cost(D.records[0],{...settings,cf:0}),RangeError);
+assert.throws(()=>M.cost(D.records[0],{...settings,lcoh:NaN}),RangeError);
+close(M.bubbleArea(0,D.bubble_scale),1800);
+close(M.bubbleArea(D.bubble_scale.min_lcoe_dollar_kwh,D.bubble_scale),1800);
+close(M.bubbleArea(D.bubble_scale.max_lcoe_dollar_kwh,D.bubble_scale),12);
+const costs=[0,.001,.01,.1,1,10,100];
+for(let i=1;i<costs.length;i++)assert.ok(M.bubbleArea(costs[i],D.bubble_scale)<=M.bubbleArea(costs[i-1],D.bubble_scale));
+assert.ok(M.csv([{...M.customRow(custom),work:'=HYPERLINK("bad")'}]).includes("'=HYPERLINK"));
+const scan=fs.readFileSync('./data/lin_si_temperature_scan.csv','utf8').replace(/^\ufeff/,'').trim().split(/\r?\n/);
+const names=scan[0].split(','),ti=names.indexOf('temperature_K'),ci=names.indexOf('selection_lcoe_dollar_kwh');
+const simpleRows=scan.slice(1).map(line=>line.split(','));
+const maxRow=simpleRows.reduce((a,b)=>Number(a[ci])>Number(b[ci])?a:b);
+assert.equal(simpleRows.length,51);assert.equal(Number(maxRow[ti]),D.lin_selection.temperature_K);
+close(Number(maxRow[ci]),D.lin_selection.selected_lcoe_dollar_kwh);
+console.log('PASS: 20 baseline costs; capital/heat decomposition; heat, CF and zero-cost scenarios; custom-cell independence and heat mode; invalid input rejection; monotonic bubble scale; CSV escaping; maximum-LCOE selection over 51 temperatures.');

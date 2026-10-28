@@ -1,0 +1,183 @@
+{
+  "1": {
+    "doi": "10.1038/s41586-022-04473-y",
+    "title": "Thermophotovoltaic efficiency of 40%",
+    "url": "https://www.nature.com/articles/s41586-022-04473-y",
+    "publisher": "Springer Science and Business Media LLC",
+    "year": 2022,
+    "first_author": "LaPotin",
+    "verified_via": "https://api.crossref.org/works/10.1038/s41586-022-04473-y"
+  },
+  "2": {
+    "doi": "10.1109/pvsc45281.2020.9300768",
+    "title": "World record demonstration of > 30% thermophotovoltaic conversion efficiency",
+    "url": "https://ieeexplore.ieee.org/document/9300768/",
+    "publisher": "IEEE",
+    "year": 2020,
+    "first_author": "Narayan",
+    "verified_via": "https://api.crossref.org/works/10.1109/PVSC45281.2020.9300768"
+  },
+  "3": {
+    "doi": "10.1063/5.0024029",
+    "title": "Inverted metamorphic AlGaInAs/GaInAs tandem thermophotovoltaic cell designed for thermal energy grid storage application",
+    "url": "https://pubs.aip.org/jap/article/128/14/143103/287293/Inverted-metamorphic-AlGaInAs-GaInAs-tandem",
+    "publisher": "AIP Publishing",
+    "year": 2020,
+    "first_author": "Schulte",
+    "verified_via": "https://api.crossref.org/works/10.1063/5.0024029"
+  },
+  "4": {
+    "doi": "10.1021/acsenergylett.3c01168",
+    "title": "Silicon Vertical Multijunction Cell for Thermophotovoltaic Conversion",
+    "url": "https://pubs.acs.org/doi/10.1021/acsenergylett.3c01168",
+    "publisher": "American Chemical Society (ACS)",
+    "year": 2023,
+    "first_author": "Chemisana",
+    "verified_via": "https://api.crossref.org/works/10.1021/acsenergylett.3c01168"
+  },
+  "7": {
+    "doi": "10.1016/j.joule.2022.10.002",
+    "title": "Efficient and scalable GaInAs thermophotovoltaic devices",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2542435122004834",
+    "publisher": "Elsevier BV",
+    "year": 2022,
+    "first_author": "Tervo",
+    "verified_via": "https://api.crossref.org/works/10.1016/j.joule.2022.10.002"
+  },
+  "8": {
+    "doi": "10.1021/acsenergylett.2c01075",
+    "title": "Air-Bridge Si Thermophotovoltaic Cell with High Photon Utilization",
+    "url": "https://pubs.acs.org/doi/10.1021/acsenergylett.2c01075",
+    "publisher": "American Chemical Society (ACS)",
+    "year": 2022,
+    "first_author": "Lee",
+    "verified_via": "https://api.crossref.org/works/10.1021/acsenergylett.2c01075"
+  },
+  "9": {
+    "doi": "10.1016/j.solener.2020.01.029",
+    "title": "High-efficiency solar thermophotovoltaic system using a nanostructure-based selective emitter",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0038092X20300372",
+    "publisher": "Elsevier BV",
+    "year": 2020,
+    "first_author": "Bhatt",
+    "verified_via": "https://api.crossref.org/works/10.1016/j.solener.2020.01.029"
+  },
+  "10": {
+    "doi": "10.1117/1.jpe.5.053099",
+    "title": "High-efficiency solar-thermophotovoltaic system equipped with a monolithic planar selective absorber/emitter",
+    "url": "https://www.spiedigitallibrary.org/journals/journal-of-photonics-for-energy/volume-5/issue-01/053099/High-efficiency-solar-thermophotovoltaic-system-equipped-with-a-monolithic-planar/10.1117/1.JPE.5.053099.full",
+    "publisher": "SPIE-Intl Soc Optical Eng",
+    "year": 2015,
+    "first_author": "Shimizu",
+    "verified_via": "https://api.crossref.org/works/10.1117/1.JPE.5.053099"
+  },
+  "11": {
+    "doi": "10.7567/apex.9.112302",
+    "title": "Unidirectional radiative heat transfer with a spectrally selective planar absorber/emitter for high-efficiency solar thermophotovoltaic systems",
+    "url": "https://iopscience.iop.org/article/10.7567/APEX.9.112302",
+    "publisher": "IOP Publishing",
+    "year": 2016,
+    "first_author": "Kohiyama",
+    "verified_via": "https://api.crossref.org/works/10.7567/APEX.9.112302"
+  },
+  "14": {
+    "doi": "10.1073/pnas.1903001116",
+    "title": "Ultraefficient thermophotovoltaic power conversion by band-edge spectral filtering",
+    "url": "https://pnas.org/doi/full/10.1073/pnas.1903001116",
+    "publisher": "National Academy of Sciences",
+    "year": 2019,
+    "first_author": "Omair",
+    "verified_via": "https://api.crossref.org/works/10.1073/pnas.1903001116"
+  },
+  "15": {
+    "doi": "10.1038/s41586-020-2717-7",
+    "title": "Near-perfect photon utilization in an air-bridge thermophotovoltaic cell",
+    "url": "https://www.nature.com/articles/s41586-020-2717-7",
+    "publisher": "Springer Science and Business Media LLC",
+    "year": 2020,
+    "first_author": "Fan",
+    "verified_via": "https://api.crossref.org/works/10.1038/s41586-020-2717-7"
+  },
+  "16": {
+    "doi": "10.1016/j.energy.2020.116962",
+    "title": "A novel thermophotovoltaic optical cavity for improved irradiance uniformity and system performance",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0360544220300694",
+    "publisher": "Elsevier BV",
+    "year": 2020,
+    "first_author": "Zhang",
+    "verified_via": "https://api.crossref.org/works/10.1016/j.energy.2020.116962"
+  },
+  "18": {
+    "doi": "10.1021/acsphotonics.9b00984",
+    "title": "High-Efficiency Thermophotovoltaic System That Employs an Emitter Based on a Silicon Rod-Type Photonic Crystal",
+    "url": "https://pubs.acs.org/doi/10.1021/acsphotonics.9b00984",
+    "publisher": "American Chemical Society (ACS)",
+    "year": 2019,
+    "first_author": "Suemitsu",
+    "verified_via": "https://api.crossref.org/works/10.1021/acsphotonics.9b00984"
+  },
+  "19": {
+    "doi": "10.1073/pnas.2215977119",
+    "title": "Semitransparent thermophotovoltaics for efficient utilization of moderate temperature thermal radiation",
+    "url": "https://pnas.org/doi/10.1073/pnas.2215977119",
+    "publisher": "National Academy of Sciences",
+    "year": 2022,
+    "first_author": "Burger",
+    "verified_via": "https://api.crossref.org/works/10.1073/pnas.2215977119"
+  },
+  "20": {
+    "doi": "10.1021/acsenergylett.3c00720",
+    "title": "Enhanced Photon Utilization in Single Cavity Mode Air-Bridge Thermophotovoltaic Cells",
+    "url": "https://pubs.acs.org/doi/10.1021/acsenergylett.3c00720",
+    "publisher": "American Chemical Society (ACS)",
+    "year": 2023,
+    "first_author": "Lim",
+    "verified_via": "https://api.crossref.org/works/10.1021/acsenergylett.3c00720"
+  },
+  "21": {
+    "doi": "10.1364/optica.5.000213",
+    "title": "High-efficiency thermophotovoltaic energy conversion enabled by a metamaterial selective emitter",
+    "url": "https://opg.optica.org/abstract.cfm?URI=optica-5-2-213",
+    "publisher": "Optica Publishing Group",
+    "year": 2018,
+    "first_author": "Woolf",
+    "verified_via": "https://api.crossref.org/works/10.1364/OPTICA.5.000213"
+  },
+  "22": {
+    "doi": "10.1038/nnano.2013.286",
+    "title": "A nanophotonic solar thermophotovoltaic device",
+    "url": "https://www.nature.com/articles/nnano.2013.286",
+    "publisher": "Springer Science and Business Media LLC",
+    "year": 2014,
+    "first_author": "Lenert",
+    "verified_via": "https://api.crossref.org/works/10.1038/nnano.2013.286"
+  },
+  "23": {
+    "doi": "10.1109/ted.2006.885087",
+    "title": "Quaternary InGaAsSb Thermophotovoltaic Diodes",
+    "url": "https://ieeexplore.ieee.org/document/4016333/",
+    "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+    "year": 2006,
+    "first_author": "Dashiell",
+    "verified_via": "https://api.crossref.org/works/10.1109/TED.2006.885087"
+  },
+  "lin-model": {
+    "doi": "10.1038/s41560-023-01255-2",
+    "title": "Silicon heterojunction solar cells with up to 26.81% efficiency achieved by electrically optimized nanocrystalline-silicon hole contact layers",
+    "url": "https://www.nature.com/articles/s41560-023-01255-2",
+    "publisher": "Springer Science and Business Media LLC",
+    "year": 2023,
+    "first_author": "Lin",
+    "verified_via": "https://api.crossref.org/works/10.1038/s41560-023-01255-2"
+  },
+  "12": {
+    "doi": null,
+    "title": "TPV generators using the radiant tube burner configuration",
+    "url": "https://www.jxcrystals.com/old_TPV/munich4.pdf",
+    "publisher": "JX Crystals, author-hosted manuscript",
+    "year": 2001,
+    "first_author": "Fraas",
+    "verified_via": "https://api.crossref.org/works/10.1117/1.JPE.14.042403",
+    "verification_note": "Matched to publisher-deposited reference r22 and original author-hosted manuscript."
+  }
+}

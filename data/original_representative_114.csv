@@ -1,0 +1,115 @@
+﻿table_id,work,emitter_temperature_C,eta_pair_pct,p_out_W_cm2,cell_type,near_field,paper_key,selected_representative,CPA_dollar_cm2,CPA_note,scenario,LCOH_cent_per_kWh_th,capacity_factor,LCOE_dollar_per_Wh_e,LCOE_dollar_per_kWh_e,bubble_area_pt2
+1,LaPotin et al. (2022),2400,41.1,2.39,III-V multijunction,False,LaPotin et al. (2022),True,50.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0002010566028473,0.20105660284729998,520.8294585649717
+2,Narayan et al. (2020),2330,31.0,2.45,GaAs,False,Narayan et al. (2020),True,35.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0001529364728657,0.1529364728657,613.3210381180309
+3,Schulte et al. (2020),2150,36.0,5.34,III-V multijunction,False,Schulte et al. (2020),True,50.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0001068741128384,0.1068741128384,750.5828756895502
+4,Chemisana et al. (2023),2100,11.4,0.14,Si,False,Chemisana et al. (2023),True,0.2,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,9.978713908057816e-05,0.09978713908057817,779.0405660421304
+7,Tervo et al. (2022),1850,38.8,3.78,InGaAs,False,Tervo et al. (2022),True,50.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0001375124628666,0.13751246286660002,652.0866027456244
+8,Lee et al. (2022),1715,18.9,0.379,Si,False,Lee et al. (2022),True,0.2,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,5.736783052719006e-05,0.05736783052719006,1035.8138403194603
+9,Bhatt et al. (2020),1403,18.0,1.71,GaSb,False,Bhatt et al. (2020),True,35.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.000228457368688,0.22845736868799998,481.0957986629759
+10,Shimizu et al. (2015),1367,23.0,3.6,GaSb,False,Shimizu et al. (2015),True,35.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0001256066221075,0.1256066221075,686.3948018029783
+11,Kohiyama et al. (2016),1367,17.6,0.42,GaSb,False,Kohiyama et al. (2016),True,35.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0007607755638577,0.7607755638577,203.11145776164201
+12,Fraas et al. (2001),1275,29.0,1.0,GaSb,False,Fraas et al. (2001),True,35.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0003301448590773,0.3301448590773,378.2697982871393
+14,Omair et al. (2019),1207,29.1,0.355,InGaAs,False,Omair et al. (2019),True,50.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0012241513857423,1.2241513857423,134.42021536715083
+15,Fan et al. (2020),1182,32.03,0.327,InGaAs,False,Fan et al. (2020),True,50.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0013228856517386,1.3228856517385998,125.08265720862839
+16,Zhang et al. (2020),1197,10.65,0.65,InGaAsSb,False,Zhang et al. (2020),True,50.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0007437035278053,0.7437035278053,206.91069906420947
+18,Suemitsu (2020),1065,11.2,0.368,GaSb,False,Suemitsu (2020),True,35.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0008927153350917,0.8927153350917,177.72984060125873
+19,Burger et al. (2022),1036,32.5,0.26,InGaAs,False,Burger et al. (2022),True,50.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0016552862662451,1.6552862662451,100.79124093000544
+20,Lim et al. (2023),1006,31.7,0.09,InGaAs,False,Lim et al. (2023),True,50.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.004724594954922,4.724594954922001,31.879277429135197
+21,Woolf et al. (2018),1055,24.1,0.189,InGaAs,False,Woolf et al. (2018),True,50.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0022762791157417,2.2762791157417,72.65215635091317
+22,Lenert et al. (2014),962,5.8,0.45,InGaAsSb,False,Lenert et al. (2014),True,50.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0011110236358228,1.1110236358228,146.79820596929616
+23,Dashiel et al. (2006),950,28.0,0.85,InGaAsSb,False,Dashiel et al. (2006),True,50.0,material-specific assumption,Reference (1 cent/kWh_th; CF=1),1.0,1.0,0.0005326253789186,0.5326253789186,268.743432777015
+1,LaPotin et al. (2022),2400,41.1,2.39,III-V multijunction,False,LaPotin et al. (2022),True,50.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0001823704714605,0.1823704714605,552.6321093133289
+2,Narayan et al. (2020),2330,31.0,2.45,GaAs,False,Narayan et al. (2020),True,35.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0001281622793173,0.1281622793173,678.660530831848
+3,Schulte et al. (2020),2150,36.0,5.34,III-V multijunction,False,Schulte et al. (2020),True,50.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,8.554077950507072e-05,0.08554077950507072,845.5758234852441
+4,Chemisana et al. (2023),2100,11.4,0.14,Si,False,Chemisana et al. (2023),True,0.2,material-specific assumption,Waste heat (1000 C),0.232,1.0,3.2418718027946576e-05,0.032418718027946575,1354.7740251727596
+7,Tervo et al. (2022),1850,38.8,3.78,InGaAs,False,Tervo et al. (2022),True,50.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0001177186484337,0.1177186484337,711.7049112777797
+8,Lee et al. (2022),1715,18.9,0.379,Si,False,Lee et al. (2022),True,0.2,material-specific assumption,Waste heat (1000 C),0.232,1.0,1.673290989226942e-05,0.016732909892269422,1800.0
+9,Bhatt et al. (2020),1403,18.0,1.71,GaSb,False,Bhatt et al. (2020),True,35.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0001857907020214,0.1857907020214,546.4750434781813
+10,Shimizu et al. (2015),1367,23.0,3.6,GaSb,False,Shimizu et al. (2015),True,35.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,9.221531775968942e-05,0.09221531775968943,812.6635799914286
+11,Kohiyama et al. (2016),1367,17.6,0.42,GaSb,False,Kohiyama et al. (2016),True,35.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0007171392002213,0.7171392002213001,213.1038217708777
+12,Fraas et al. (2001),1275,29.0,1.0,GaSb,False,Fraas et al. (2001),True,35.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0003036621004566,0.3036621004566,400.14628114127765
+14,Omair et al. (2019),1207,29.1,0.355,InGaAs,False,Omair et al. (2019),True,50.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0011977596331649,1.1977596331648999,137.13337768381524
+15,Fan et al. (2020),1182,32.03,0.327,InGaAs,False,Fan et al. (2020),True,50.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0012989081306646,1.2989081306646,127.24018115444728
+16,Zhang et al. (2020),1197,10.65,0.65,InGaAsSb,False,Zhang et al. (2020),True,50.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.000671590851749,0.671590851749,224.60629463795556
+18,Suemitsu (2020),1065,11.2,0.368,GaSb,False,Suemitsu (2020),True,35.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0008241439065203,0.8241439065203,190.1126827075511
+19,Burger et al. (2022),1036,32.5,0.26,InGaAs,False,Burger et al. (2022),True,50.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0016316554970144,1.6316554970144,102.23338507804502
+20,Lim et al. (2023),1006,31.7,0.09,InGaAs,False,Lim et al. (2023),True,50.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0047003678255845,4.700367825584499,32.068976571599094
+21,Woolf et al. (2018),1055,24.1,0.189,InGaAs,False,Woolf et al. (2018),True,50.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0022444118958247,2.2444118958247,73.74958727472021
+22,Lenert et al. (2014),962,5.8,0.45,InGaAsSb,False,Lenert et al. (2014),True,50.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0009786098427194,0.9786098427194,164.22170302041727
+23,Dashiel et al. (2006),950,28.0,0.85,InGaAsSb,False,Dashiel et al. (2006),True,50.0,material-specific assumption,Waste heat (1000 C),0.232,1.0,0.0005051968074901,0.5051968074901,279.5977270448106
+1,LaPotin et al. (2022),2400,41.1,2.39,III-V multijunction,False,LaPotin et al. (2022),True,50.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0009480220318275,0.9480220318275,168.80464302653573
+2,Narayan et al. (2020),2330,31.0,2.45,GaAs,False,Narayan et al. (2020),True,35.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0008023910527534,0.8023910527534001,194.39079739057016
+3,Schulte et al. (2020),2150,36.0,5.34,III-V multijunction,False,Schulte et al. (2020),True,50.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0005916631180202,0.5916631180202,248.04231872523945
+4,Chemisana et al. (2023),2100,11.4,0.14,Si,False,Chemisana et al. (2023),True,0.2,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0009175696089538,0.9175696089537999,173.61157161065415
+7,Tervo et al. (2022),1850,38.8,3.78,InGaAs,False,Tervo et al. (2022),True,50.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0007023694390956,0.7023694390956,216.70549927699065
+8,Lee et al. (2022),1715,18.9,0.379,Si,False,Lee et al. (2022),True,0.2,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0005421697348071,0.5421697348071001,265.16410564830073
+9,Bhatt et al. (2020),1403,18.0,1.71,GaSb,False,Bhatt et al. (2020),True,35.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0012421628080856,1.2421628080856,132.62408191261304
+10,Shimizu et al. (2015),1367,23.0,3.6,GaSb,False,Shimizu et al. (2015),True,35.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0007593830101691,0.7593830101691,203.4163014013357
+11,Kohiyama et al. (2016),1367,17.6,0.42,GaSb,False,Kohiyama et al. (2016),True,35.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0033788977099764,3.3788977099764,46.934927551800754
+12,Fraas et al. (2001),1275,29.0,1.0,GaSb,False,Fraas et al. (2001),True,35.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0015243725397575,1.5243725397574999,109.26664983126675
+14,Omair et al. (2019),1207,29.1,0.355,InGaAs,False,Omair et al. (2019),True,50.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0050996983264744,5.0996983264744005,29.199479718631903
+15,Fan et al. (2020),1182,32.03,0.327,InGaAs,False,Fan et al. (2020),True,50.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0054760571245942,5.4760571245942,26.92936775870513
+16,Zhang et al. (2020),1197,10.65,0.65,InGaAsSb,False,Zhang et al. (2020),True,50.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0035297436886863,3.5297436886863,44.647301805812255
+18,Suemitsu (2020),1065,11.2,0.368,GaSb,False,Suemitsu (2020),True,35.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0040985399117955,4.0985399117955,37.57968429202054
+19,Burger et al. (2022),1036,32.5,0.26,InGaAs,False,Burger et al. (2022),True,50.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0068029912188268,6.8029912188268,21.258597154065455
+20,Lim et al. (2023),1006,31.7,0.09,InGaAs,False,Lim et al. (2023),True,50.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0190848151509186,19.084815150918597,12.053317894577608
+21,Woolf et al. (2018),1055,24.1,0.189,InGaAs,False,Woolf et al. (2018),True,50.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0093503446787347,9.3503446787347,15.858307719573254
+22,Lenert et al. (2014),962,5.8,0.45,InGaAsSb,False,Lenert et al. (2014),True,50.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0054630600605328,5.4630600605328,27.001698495212647
+23,Dashiel et al. (2006),950,28.0,0.85,InGaAsSb,False,Dashiel et al. (2006),True,50.0,material-specific assumption,Portable power (1200 C),9.91,0.25,0.0023415729442461,2.3415729442460997,70.49014841691175
+1,LaPotin et al. (2022),2400,41.1,2.39,III-V multijunction,False,LaPotin et al. (2022),True,50.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0012242611164267,1.2242611164267,134.4091389866403
+2,Narayan et al. (2020),2330,31.0,2.45,GaAs,False,Narayan et al. (2020),True,35.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.001055004944974,1.0550049449740002,153.7312079902349
+3,Schulte et al. (2020),2150,36.0,5.34,III-V multijunction,False,Schulte et al. (2020),True,50.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.000784370564192,0.784370564192,198.07698316466195
+4,Chemisana et al. (2023),2100,11.4,0.14,Si,False,Chemisana et al. (2023),True,0.2,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0012884093796134,1.2884093796134002,128.20616044398827
+7,Tervo et al. (2022),1850,38.8,3.78,InGaAs,False,Tervo et al. (2022),True,50.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.00091952107722,0.91952107722,173.29583251381462
+8,Lee et al. (2022),1715,18.9,0.379,Si,False,Lee et al. (2022),True,0.2,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0007630296288264,0.7630296288264,202.6198850652154
+9,Bhatt et al. (2020),1403,18.0,1.71,GaSb,False,Bhatt et al. (2020),True,35.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0016422868434404,1.6422868434403999,101.58008721777152
+10,Shimizu et al. (2015),1367,23.0,3.6,GaSb,False,Shimizu et al. (2015),True,35.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0010193374583636,1.0193374583636001,158.46913280727577
+11,Kohiyama et al. (2016),1367,17.6,0.42,GaSb,False,Kohiyama et al. (2016),True,35.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0043152414556524,4.315241455652401,35.40258057863254
+12,Fraas et al. (2001),1275,29.0,1.0,GaSb,False,Fraas et al. (2001),True,35.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0019610691229727,1.9610691229727,84.93148222117755
+14,Omair et al. (2019),1207,29.1,0.355,InGaAs,False,Omair et al. (2019),True,50.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.006430035279227,6.430035279227,22.56140321289086
+15,Fan et al. (2020),1182,32.03,0.327,InGaAs,False,Fan et al. (2020),True,50.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0068954148337789,6.8954148337789,20.963559813710432
+16,Zhang et al. (2020),1197,10.65,0.65,InGaAsSb,False,Zhang et al. (2020),True,50.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0045635880615622,4.5635880615622,33.18207546987269
+18,Suemitsu (2020),1065,11.2,0.368,GaSb,False,Suemitsu (2020),True,35.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0052671481040301,5.2671481040301,28.14289430496908
+19,Burger et al. (2022),1036,32.5,0.26,InGaAs,False,Burger et al. (2022),True,50.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0085533544081489,8.553354408148898,17.064338643816857
+20,Lim et al. (2023),1006,31.7,0.09,InGaAs,False,Lim et al. (2023),True,50.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0239068864465346,23.9068864465346,12.0
+21,Woolf et al. (2018),1055,24.1,0.189,InGaAs,False,Woolf et al. (2018),True,50.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0117548395621113,11.7548395621113,13.66854024027402
+22,Lenert et al. (2014),962,5.8,0.45,InGaAsSb,False,Lenert et al. (2014),True,50.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.0071068423170454,7.1068423170454,20.326094446982644
+23,Dashiel et al. (2006),950,28.0,0.85,InGaAsSb,False,Dashiel et al. (2006),True,50.0,material-specific assumption,Solar TPV (1400 C),14.0,0.2,0.002984555466022,2.984555466022,54.012703069970684
+1,LaPotin et al. (2022),2400,41.1,2.39,III-V multijunction,False,LaPotin et al. (2022),True,50.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0006049495468863,0.6049495468863001,243.81639988748267
+2,Narayan et al. (2020),2330,31.0,2.45,GaAs,False,Narayan et al. (2020),True,35.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0006884203438335,0.6884203438335,220.2177449732091
+3,Schulte et al. (2020),2150,36.0,5.34,III-V multijunction,False,Schulte et al. (2020),True,50.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0005679852239495,0.5679852239495,255.9476877291405
+4,Chemisana et al. (2023),2100,11.4,0.14,Si,False,Chemisana et al. (2023),True,0.2,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0015559274899577,1.5559274899577,107.11075459109341
+7,Tervo et al. (2022),1850,38.8,3.78,InGaAs,False,Tervo et al. (2022),True,50.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.000565347514413,0.565347514413,256.8597138227554
+8,Lee et al. (2022),1715,18.9,0.379,Si,False,Lee et al. (2022),True,0.2,material-specific assumption,Power plant (1700 C),17.6,1.0,0.000935674708834,0.9356747088340001,170.7231742889259
+9,Bhatt et al. (2020),1403,18.0,1.71,GaSb,False,Bhatt et al. (2020),True,35.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0011506795909103,1.1506795909103,142.22943320452669
+10,Shimizu et al. (2015),1367,23.0,3.6,GaSb,False,Shimizu et al. (2015),True,35.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0008473457525422,0.8473457525422,185.74360342293014
+11,Kohiyama et al. (2016),1367,17.6,0.42,GaSb,False,Kohiyama et al. (2016),True,35.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0017039573820395,1.7039573820395,97.93156328460357
+12,Fraas et al. (2001),1275,29.0,1.0,GaSb,False,Fraas et al. (2001),True,35.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0009025586521807,0.9025586521807,176.07699780513278
+14,Omair et al. (2019),1207,29.1,0.355,InGaAs,False,Omair et al. (2019),True,50.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0017945981211375,1.7945981211375002,92.97155399030993
+15,Fan et al. (2020),1182,32.03,0.327,InGaAs,False,Fan et al. (2020),True,50.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0018411497791192,1.8411497791192,90.59279811095851
+16,Zhang et al. (2020),1197,10.65,0.65,InGaAsSb,False,Zhang et al. (2020),True,50.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0023023889738147,2.3023889738147,71.77396003885829
+18,Suemitsu (2020),1065,11.2,0.368,GaSb,False,Suemitsu (2020),True,35.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0023748581922346,2.3748581922346,69.43058995360647
+19,Burger et al. (2022),1036,32.5,0.26,InGaAs,False,Burger et al. (2022),True,50.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0021660554970144,2.1660554970144004,76.57423447089772
+20,Lim et al. (2023),1006,31.7,0.09,InGaAs,False,Lim et al. (2023),True,50.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0052482542609157,5.2482542609157,28.258216393485935
+21,Woolf et al. (2018),1055,24.1,0.189,InGaAs,False,Woolf et al. (2018),True,50.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0029650757962397,2.9650757962396996,54.41060703332279
+22,Lenert et al. (2014),962,5.8,0.45,InGaAsSb,False,Lenert et al. (2014),True,50.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0039730926013401,3.9730926013401002,38.95635465731459
+23,Dashiel et al. (2006),950,28.0,0.85,InGaAsSb,False,Dashiel et al. (2006),True,50.0,material-specific assumption,Power plant (1700 C),17.6,1.0,0.0011254825217758,1.1254825217758,145.10154731451075
+1,LaPotin et al. (2022),2400,41.1,2.39,III-V multijunction,False,LaPotin et al. (2022),True,50.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0003155989322846,0.3155989322846,389.9535515305596
+2,Narayan et al. (2020),2330,31.0,2.45,GaAs,False,Narayan et al. (2020),True,35.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0002815247049684,0.28152470496840004,420.68670593310446
+3,Schulte et al. (2020),2150,36.0,5.34,III-V multijunction,False,Schulte et al. (2020),True,50.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0002125190114518,0.2125190114518,503.3217209779442
+4,Chemisana et al. (2023),2100,11.4,0.14,Si,False,Chemisana et al. (2023),True,0.2,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0003847150058675,0.3847150058675,340.4045967614168
+7,Tervo et al. (2022),1850,38.8,3.78,InGaAs,False,Tervo et al. (2022),True,50.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0002433885094779,0.2433885094779,462.19767520347006
+8,Lee et al. (2022),1715,18.9,0.379,Si,False,Lee et al. (2022),True,0.2,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0002286512396866,0.2286512396866,480.83916084236427
+9,Bhatt et al. (2020),1403,18.0,1.71,GaSb,False,Bhatt et al. (2020),True,35.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0004427598819535,0.4427598819535,308.00560258218815
+10,Shimizu et al. (2015),1367,23.0,3.6,GaSb,False,Shimizu et al. (2015),True,35.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0002824280936863,0.2824280936863,419.8029926850515
+11,Kohiyama et al. (2016),1367,17.6,0.42,GaSb,False,Kohiyama et al. (2016),True,35.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0010879141514167,1.0879141514167001,149.58701822317255
+12,Fraas et al. (2001),1275,29.0,1.0,GaSb,False,Fraas et al. (2001),True,35.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0005017366395198,0.5017366395198,281.0307684759236
+14,Omair et al. (2019),1207,29.1,0.355,InGaAs,False,Omair et al. (2019),True,50.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0015784956454726,1.5784956454726,105.61472576637351
+15,Fan et al. (2020),1182,32.03,0.327,InGaAs,False,Fan et al. (2020),True,50.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0016879742795793,1.6879742795793,98.85470085653066
+16,Zhang et al. (2020),1197,10.65,0.65,InGaAsSb,False,Zhang et al. (2020),True,50.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0011791439075883,1.1791439075883,139.1078990698602
+18,Suemitsu (2020),1065,11.2,0.368,GaSb,False,Suemitsu (2020),True,35.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0013447732092327,1.3447732092327,123.17012755994087
+19,Burger et al. (2022),1036,32.5,0.26,InGaAs,False,Burger et al. (2022),True,50.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0020870955941786,2.0870955941786002,79.61663296166658
+20,Lim et al. (2023),1006,31.7,0.09,InGaAs,False,Lim et al. (2023),True,50.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0057873991893516,5.7873991893516,25.31114090455288
+21,Woolf et al. (2018),1055,24.1,0.189,InGaAs,False,Woolf et al. (2018),True,50.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.00286761619204,2.8676161920400003,56.4806521144671
+22,Lenert et al. (2014),962,5.8,0.45,InGaAsSb,False,Lenert et al. (2014),True,50.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0018584414390886,1.8584414390886002,89.73624260217557
+23,Dashiel et al. (2006),950,28.0,0.85,InGaAsSb,False,Dashiel et al. (2006),True,50.0,material-specific assumption,Thermal storage (2150 C),4.22,0.83,0.0007494023498159,0.7494023498159,205.62729495921792
