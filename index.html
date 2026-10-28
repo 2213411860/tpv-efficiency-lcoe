@@ -8,9 +8,8 @@
 <p class="formula-units">LCOE: $ kWh<sub>e</sub><sup>−1</sup> · LCOH: ¢ kWh<sub>th</sub><sup>−1</sup> · CPA: $ cm<sup>−2</sup> · P<sub>out</sub>, Q<sub>abs</sub>: W cm<sup>−2</sup> · CRF = 0.074</p>
 </section>
 <div class="workspace">
-<section class="chart-card" aria-labelledby="chart-heading">
-<div class="card-heading"><div><h2 id="chart-heading">Efficiency and power density</h2><p>Larger bubbles indicate lower LCOE. Select a point for details.</p></div><button id="export-svg" class="button secondary small">Export SVG ↓</button></div>
-<div class="scenario-strip"><span>LCOH <strong id="heat-readout">1</strong> ¢ kWh<sub>th</sub><sup>−1</sup></span><span>CF <strong id="cf-readout">1.00</strong></span><span id="point-count">21 points</span></div>
+<section class="chart-card" aria-label="TPV performance chart">
+<div class="chart-toolbar"><button id="export-svg" class="button secondary small">Export SVG ↓</button></div>
 <div class="chart-wrap"><svg id="chart" viewBox="0 0 920 585" role="img" aria-label="TPV efficiency, electrical power density and LCOE"></svg></div>
 <div id="selection" class="selection" aria-live="polite"></div>
 <div class="chart-footer"><a href="data.html">References &amp; data →</a></div>
@@ -18,7 +17,7 @@
 <aside class="controls" aria-label="Calculation parameters">
 <section class="control-card"><div class="section-title"><h2>Economic assumptions</h2></div><div id="economic-controls"></div><div class="presets" aria-label="Heat price presets"><span>LCOH</span><button data-heat="0.1">0.1 ¢</button><button data-heat="1">1 ¢</button><button data-heat="10">10 ¢</button></div><p class="muted compact-note">CRF = 0.074 · 8760 h yr<sup>−1</sup></p></section>
 <section class="control-card"><div class="section-title"><h2>Cell area cost, CPA</h2><span class="unit">$/cm²</span></div><div id="cpa-controls"></div></section>
-<section class="control-card custom-card"><div class="section-title"><h2><i class="material-dot custom-dot"></i> Custom cell</h2><label class="switch"><input id="custom-enabled" type="checkbox" checked aria-label="Show custom cell"><span></span></label></div><div id="custom-fields"><div id="custom-controls"></div><div id="custom-derived" class="derived" aria-live="polite"></div><p id="custom-error" class="error" role="alert"></p></div></section>
+<section class="control-card custom-card"><div class="section-title"><h2><i class="material-dot custom-dot"></i> Custom cell</h2><label class="switch"><input id="custom-enabled" type="checkbox" aria-label="Show custom cell"><span></span></label></div><div id="custom-fields"><div id="custom-controls"></div><div id="custom-derived" class="derived" aria-live="polite"></div><p id="custom-error" class="error" role="alert"></p></div></section>
 </aside></div>
 
 </main><footer><span>TPV LAB</span><span>Data version · 2026-10-28</span></footer><div id="toast" role="status" class="toast" hidden></div><div id="tooltip" class="tooltip" role="tooltip" hidden></div></body></html>

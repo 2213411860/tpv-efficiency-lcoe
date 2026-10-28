@@ -47,3 +47,5 @@ Literature performance coordinates are retained from the supplied compilation. R
 Official deployment documentation: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
 Custom Pout and Qabs sliders are linear, starting at zero. Positive values are required for valid efficiency and LCOE. Bubble sizes use the original fixed absolute-LCOE mapping: area 16+6384u^5 pt^2, with inverse-normalized log10(LCOE) over the fixed reference cost range 0.016732909892269422 to 23.9068864465346 dollars/kWh. The same LCOE always gives the same size. Legend values are fixed at 0.16, 1.1 and 5.4 dollars/kWh.
+
+Custom is hidden by default and after Reset. The This work label is at the upper right of its point. LCOH and CF are rendered above the axes inside the exported SVG; the former chart heading and point count are omitted.

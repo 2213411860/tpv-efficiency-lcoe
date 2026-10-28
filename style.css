@@ -27,6 +27,7 @@
 @media(max-width:520px){.calculation-card{padding:12px 14px;margin-bottom:14px}.equations{display:block}.equation{font-size:12px}.equation .katex-display{text-align:left}.formula-units{font-size:9px;text-align:left;line-height:1.8}.custom-card .derived{font-size:11px}}
 
 /* Readable interface type; SVG chart typography retains the paper template. */
+.chart-toolbar{display:flex;justify-content:flex-end;padding:14px 20px 0}
 body{font-size:16px}
 nav a{font-size:15px}
 .page-heading h1{font-size:clamp(25px,2.2vw,34px)}
