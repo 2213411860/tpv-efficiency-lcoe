@@ -39,7 +39,7 @@
       paper_key:'custom',near_field:false,selected_representative:true};
   }
   function csv(rows) {
-    const keys=['id','table_id','work','cell_type','kind','emitter_temperature_K','emitter_temperature_C',
+    const keys=['id','table_id','label','manuscript_reference_number','original_table_id','work','cell_type','kind','emitter_temperature_K','emitter_temperature_C',
       'eta_pair_pct','p_out_W_cm2','p_abs_W_cm2','CPA_dollar_cm2','lcoh_cent_per_kwh',
       'capacity_factor','lcoe_cell_dollar_kwh','lcoe_heat_dollar_kwh','lcoe_dollar_kwh','source_url','source_note'];
     const quote=value=>{

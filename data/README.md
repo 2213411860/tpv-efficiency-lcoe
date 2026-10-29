@@ -16,4 +16,6 @@ Only cell capital and heat costs are included; optical hardware, packaging, cool
 
 Bubble area is A=16+6384u^5 pt^2, where u=(log10(LCOE_max)-log10(LCOE))/(log10(LCOE_max)-log10(LCOE_min)), clipped to [0,1]. LCOE_min and LCOE_max are fixed reference values. Zero cost uses the maximum size; out-of-range costs are clipped in size only. Numerical LCOE results remain unchanged.
 
-Yi et al. (Nano Letters 2025, DOI 10.1021/acs.nanolett.5c02226) is included as reference 24: the measured six-layer-filter GaSb pair is 20.6% and 0.352 W/cm2 at 1441 degC. The evidence and cost boundary are in data/yi_2025_filtered_gasb.json. Its CPA follows the common GaSb control (35 dollars/cm2 initially); filter manufacturing cost is excluded. The original 114-row compilation is unchanged.
+Yi et al. (Nano Letters 2025, DOI 10.1021/acs.nanolett.5c02226) is included as reference 16: the measured six-layer-filter GaSb pair is 20.6% and 0.352 W/cm2 at 1441 degC. The evidence and cost boundary are in data/yi_2025_filtered_gasb.json. Its CPA follows the common GaSb control (35 dollars/cm2 initially); filter manufacturing cost is excluded. The original 114-row compilation is unchanged.
+
+Figure labels, the Ref. column, bibliography keys and current-results exports use the manuscript citation numbers. Original figure numbers are retained as original_table_id and in data/manuscript_reference_numbers.csv; stable record IDs and the original 114-row compilation are unchanged.

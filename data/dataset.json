@@ -4,8 +4,8 @@
   "records": [
     {
       "id": "ref-1",
-      "table_id": 1,
-      "label": "1",
+      "table_id": 3,
+      "label": "3",
       "work": "LaPotin et al. (2022)",
       "cell_type": "III-V multijunction",
       "emitter_temperature_C": 2400.0,
@@ -24,12 +24,14 @@
       "paper_key": "LaPotin et al. (2022)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.20105660284729998
+      "reference_lcoe_dollar_kwh": 0.20105660284729998,
+      "original_table_id": 1,
+      "manuscript_reference_number": 3
     },
     {
       "id": "ref-2",
-      "table_id": 2,
-      "label": "2",
+      "table_id": 39,
+      "label": "39",
       "work": "Narayan et al. (2020)",
       "cell_type": "GaAs",
       "emitter_temperature_C": 2330.0,
@@ -48,12 +50,14 @@
       "paper_key": "Narayan et al. (2020)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.1529364728657
+      "reference_lcoe_dollar_kwh": 0.1529364728657,
+      "original_table_id": 2,
+      "manuscript_reference_number": 39
     },
     {
       "id": "ref-3",
-      "table_id": 3,
-      "label": "3",
+      "table_id": 49,
+      "label": "49",
       "work": "Schulte et al. (2020)",
       "cell_type": "III-V multijunction",
       "emitter_temperature_C": 2150.0,
@@ -72,12 +76,14 @@
       "paper_key": "Schulte et al. (2020)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.1068741128384
+      "reference_lcoe_dollar_kwh": 0.1068741128384,
+      "original_table_id": 3,
+      "manuscript_reference_number": 49
     },
     {
       "id": "ref-4",
-      "table_id": 4,
-      "label": "4",
+      "table_id": 38,
+      "label": "38",
       "work": "Chemisana et al. (2023)",
       "cell_type": "Si",
       "emitter_temperature_C": 2100.0,
@@ -96,12 +102,14 @@
       "paper_key": "Chemisana et al. (2023)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.09978713908057817
+      "reference_lcoe_dollar_kwh": 0.09978713908057817,
+      "original_table_id": 4,
+      "manuscript_reference_number": 38
     },
     {
       "id": "ref-7",
-      "table_id": 7,
-      "label": "7",
+      "table_id": 6,
+      "label": "6",
       "work": "Tervo et al. (2022)",
       "cell_type": "InGaAs",
       "emitter_temperature_C": 1850.0,
@@ -120,12 +128,14 @@
       "paper_key": "Tervo et al. (2022)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.13751246286660002
+      "reference_lcoe_dollar_kwh": 0.13751246286660002,
+      "original_table_id": 7,
+      "manuscript_reference_number": 6
     },
     {
       "id": "ref-8",
-      "table_id": 8,
-      "label": "8",
+      "table_id": 21,
+      "label": "21",
       "work": "Lee et al. (2022)",
       "cell_type": "Si",
       "emitter_temperature_C": 1715.0,
@@ -144,12 +154,14 @@
       "paper_key": "Lee et al. (2022)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.05736783052719006
+      "reference_lcoe_dollar_kwh": 0.05736783052719006,
+      "original_table_id": 8,
+      "manuscript_reference_number": 21
     },
     {
       "id": "ref-9",
-      "table_id": 9,
-      "label": "9",
+      "table_id": 14,
+      "label": "14",
       "work": "Bhatt et al. (2020)",
       "cell_type": "GaSb",
       "emitter_temperature_C": 1403.0,
@@ -168,12 +180,14 @@
       "paper_key": "Bhatt et al. (2020)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.22845736868799998
+      "reference_lcoe_dollar_kwh": 0.22845736868799998,
+      "original_table_id": 9,
+      "manuscript_reference_number": 14
     },
     {
       "id": "ref-10",
-      "table_id": 10,
-      "label": "10",
+      "table_id": 40,
+      "label": "40",
       "work": "Shimizu et al. (2015)",
       "cell_type": "GaSb",
       "emitter_temperature_C": 1367.0,
@@ -192,12 +206,14 @@
       "paper_key": "Shimizu et al. (2015)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.1256066221075
+      "reference_lcoe_dollar_kwh": 0.1256066221075,
+      "original_table_id": 10,
+      "manuscript_reference_number": 40
     },
     {
       "id": "ref-11",
-      "table_id": 11,
-      "label": "11",
+      "table_id": 41,
+      "label": "41",
       "work": "Kohiyama et al. (2016)",
       "cell_type": "GaSb",
       "emitter_temperature_C": 1367.0,
@@ -216,12 +232,14 @@
       "paper_key": "Kohiyama et al. (2016)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.7607755638577
+      "reference_lcoe_dollar_kwh": 0.7607755638577,
+      "original_table_id": 11,
+      "manuscript_reference_number": 41
     },
     {
       "id": "ref-12",
-      "table_id": 12,
-      "label": "12",
+      "table_id": 42,
+      "label": "42",
       "work": "Fraas et al. (2001)",
       "cell_type": "GaSb",
       "emitter_temperature_C": 1275.0,
@@ -240,12 +258,14 @@
       "paper_key": "Fraas et al. (2001)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.3301448590773
+      "reference_lcoe_dollar_kwh": 0.3301448590773,
+      "original_table_id": 12,
+      "manuscript_reference_number": 42
     },
     {
       "id": "ref-14",
-      "table_id": 14,
-      "label": "14",
+      "table_id": 4,
+      "label": "4",
       "work": "Omair et al. (2019)",
       "cell_type": "InGaAs",
       "emitter_temperature_C": 1207.0,
@@ -264,12 +284,14 @@
       "paper_key": "Omair et al. (2019)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 1.2241513857423
+      "reference_lcoe_dollar_kwh": 1.2241513857423,
+      "original_table_id": 14,
+      "manuscript_reference_number": 4
     },
     {
       "id": "ref-15",
-      "table_id": 15,
-      "label": "15",
+      "table_id": 5,
+      "label": "5",
       "work": "Fan et al. (2020)",
       "cell_type": "InGaAs",
       "emitter_temperature_C": 1182.0,
@@ -288,12 +310,14 @@
       "paper_key": "Fan et al. (2020)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 1.3228856517385998
+      "reference_lcoe_dollar_kwh": 1.3228856517385998,
+      "original_table_id": 15,
+      "manuscript_reference_number": 5
     },
     {
       "id": "ref-16",
-      "table_id": 16,
-      "label": "16",
+      "table_id": 44,
+      "label": "44",
       "work": "Zhang et al. (2020)",
       "cell_type": "InGaAsSb",
       "emitter_temperature_C": 1197.0,
@@ -312,12 +336,14 @@
       "paper_key": "Zhang et al. (2020)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.7437035278053
+      "reference_lcoe_dollar_kwh": 0.7437035278053,
+      "original_table_id": 16,
+      "manuscript_reference_number": 44
     },
     {
       "id": "ref-18",
-      "table_id": 18,
-      "label": "18",
+      "table_id": 43,
+      "label": "43",
       "work": "Suemitsu (2020)",
       "cell_type": "GaSb",
       "emitter_temperature_C": 1065.0,
@@ -336,12 +362,14 @@
       "paper_key": "Suemitsu (2020)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.8927153350917
+      "reference_lcoe_dollar_kwh": 0.8927153350917,
+      "original_table_id": 18,
+      "manuscript_reference_number": 43
     },
     {
       "id": "ref-19",
-      "table_id": 19,
-      "label": "19",
+      "table_id": 45,
+      "label": "45",
       "work": "Burger et al. (2022)",
       "cell_type": "InGaAs",
       "emitter_temperature_C": 1036.0,
@@ -360,12 +388,14 @@
       "paper_key": "Burger et al. (2022)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 1.6552862662451
+      "reference_lcoe_dollar_kwh": 1.6552862662451,
+      "original_table_id": 19,
+      "manuscript_reference_number": 45
     },
     {
       "id": "ref-20",
-      "table_id": 20,
-      "label": "20",
+      "table_id": 46,
+      "label": "46",
       "work": "Lim et al. (2023)",
       "cell_type": "InGaAs",
       "emitter_temperature_C": 1006.0,
@@ -384,12 +414,14 @@
       "paper_key": "Lim et al. (2023)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 4.724594954922001
+      "reference_lcoe_dollar_kwh": 4.724594954922001,
+      "original_table_id": 20,
+      "manuscript_reference_number": 46
     },
     {
       "id": "ref-21",
-      "table_id": 21,
-      "label": "21",
+      "table_id": 47,
+      "label": "47",
       "work": "Woolf et al. (2018)",
       "cell_type": "InGaAs",
       "emitter_temperature_C": 1055.0,
@@ -408,12 +440,14 @@
       "paper_key": "Woolf et al. (2018)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 2.2762791157417
+      "reference_lcoe_dollar_kwh": 2.2762791157417,
+      "original_table_id": 21,
+      "manuscript_reference_number": 47
     },
     {
       "id": "ref-22",
-      "table_id": 22,
-      "label": "22",
+      "table_id": 9,
+      "label": "9",
       "work": "Lenert et al. (2014)",
       "cell_type": "InGaAsSb",
       "emitter_temperature_C": 962.0,
@@ -432,12 +466,14 @@
       "paper_key": "Lenert et al. (2014)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 1.1110236358228
+      "reference_lcoe_dollar_kwh": 1.1110236358228,
+      "original_table_id": 22,
+      "manuscript_reference_number": 9
     },
     {
       "id": "ref-23",
-      "table_id": 23,
-      "label": "23",
+      "table_id": 48,
+      "label": "48",
       "work": "Dashiell et al. (2006)",
       "cell_type": "InGaAsSb",
       "emitter_temperature_C": 950.0,
@@ -456,12 +492,14 @@
       "paper_key": "Dashiel et al. (2006)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.5326253789186
+      "reference_lcoe_dollar_kwh": 0.5326253789186,
+      "original_table_id": 23,
+      "manuscript_reference_number": 48
     },
     {
       "id": "ref-24",
-      "table_id": 24,
-      "label": "24",
+      "table_id": 16,
+      "label": "16",
       "work": "Yi et al. (2025), six-layer filter",
       "cell_type": "GaSb",
       "emitter_temperature_C": 1441.0,
@@ -481,7 +519,9 @@
       "paper_key": "Yi et al. (2025)",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.8884928383448798
+      "reference_lcoe_dollar_kwh": 0.8884928383448798,
+      "original_table_id": 24,
+      "manuscript_reference_number": 16
     },
     {
       "id": "lin-model",
@@ -562,5 +602,10 @@
     "outputs/tpv_bubble_redraw_2026-10-28/tpv_representative_data_redrawn.csv": "d06fa5c82f406e972148a40814ea31bbe3be9c590cb071b4995b86b4e98ee7fb",
     "outputs/three_cell_selective_2026-10-26/physical_inputs.csv": "c00a42cfcf2eb2c2340bbe398df75ee74a866cc40052d764fd9c7bd0707305b2",
     "tpv_interactive_web/bibliography.json": "c418818fb2e904c3cad04ac6dc34673b7344aba4a1600e984e14f3e11f06fe45"
+  },
+  "reference_numbering": {
+    "scheme": "manuscript citation numbers supplied by the author",
+    "mapping_file": "manuscript_reference_numbers.csv",
+    "stable_record_ids": "Record IDs retain their original ref-N identifiers for traceability."
   }
 }
