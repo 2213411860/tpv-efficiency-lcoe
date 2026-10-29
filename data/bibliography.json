@@ -179,5 +179,14 @@
     "first_author": "Fraas",
     "verified_via": "https://api.crossref.org/works/10.1117/1.JPE.14.042403",
     "verification_note": "Matched to publisher-deposited reference r22 and original author-hosted manuscript."
+  },
+  "24": {
+    "doi": "10.1021/acs.nanolett.5c02226",
+    "title": "Efficient and Scalable Thermal Radiation Management for Large-Scale Thermophotovoltaic Applications",
+    "url": "https://pubs.acs.org/doi/10.1021/acs.nanolett.5c02226",
+    "publisher": "American Chemical Society (ACS)",
+    "year": 2025,
+    "first_author": "Yi",
+    "verified_via": "https://pubs.acs.org/doi/10.1021/acs.nanolett.5c02226"
   }
 }

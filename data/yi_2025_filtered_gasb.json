@@ -1,0 +1,33 @@
+{
+  "doi": "10.1021/acs.nanolett.5c02226",
+  "title": "Efficient and Scalable Thermal Radiation Management for Large-Scale Thermophotovoltaic Applications",
+  "publication": "Nano Letters 2025, 25, 11570-11577",
+  "original_publication": "https://pubs.acs.org/doi/10.1021/acs.nanolett.5c02226",
+  "location": "Main text p. 11574 (PDF p. 5), paragraph following Eq. (1), Fig. 3e",
+  "architecture": "Commercial GaSb TPV cell with a fabricated six-layer front filter",
+  "measurement": {
+    "efficiency_percent": 20.6,
+    "efficiency_uncertainty_percentage_points": 0.13,
+    "electrical_power_density_W_cm2": 0.352,
+    "emitter_temperature_degC": 1441.0,
+    "emitter_temperature_K": 1714.15,
+    "view_factor": 0.5585,
+    "emitter": "silicon nitride graybody",
+    "efficiency_denominator": "net power absorbed in both the GaSb cell and the filter"
+  },
+  "derived": {
+    "absorbed_heat_density_W_cm2": 1.7087378640776696,
+    "baseline_LCOE_dollar_kWh": 0.8884928383448798
+  },
+  "cost_scenario": {
+    "CPA_dollar_cm2": 35,
+    "LCOH_cent_kWh_th": 1,
+    "capacity_factor": 1,
+    "CRF": 0.074,
+    "note": "Common GaSb comparison CPA; not a cell price reported by Yi et al. Additional filter manufacturing cost is excluded."
+  },
+  "verification": {
+    "publisher_page_checked": "2026-10-29",
+    "local_full_text_sha256": "ac62a6ce19a61c44f97d74e8f9c9ab1da8160212188ace8b75d51493146c9a7d"
+  }
+}

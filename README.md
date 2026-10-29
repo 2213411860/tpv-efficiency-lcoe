@@ -34,7 +34,7 @@ Open `http://localhost:8765/`.
 
 ## Data and calculation
 
-The chart retains 19 literature coordinates and one Si HJT TPV point predicted in this work. The Si HJT prediction has a dedicated red color and the custom cell has a dedicated rose color. A custom cell requires only CPA, electrical output power density Pout and absorbed heat density Qabs; efficiency is calculated as Pout/Qabs. No material assignment is required. All literature sources link to their original publisher or author-hosted manuscript.
+The chart retains 20 literature coordinates and one numerical Si HJT TPV prediction. The Si HJT prediction has a dedicated red color and the custom cell has a dedicated rose color. A custom cell requires only CPA, electrical output power density Pout and absorbed heat density Qabs; efficiency is calculated as Pout/Qabs. No material assignment is required. All literature sources link to their original publisher or author-hosted manuscript.
 
 LCOE = 1000 * CRF * CPA / (8760 * CF * Pout) + (LCOH / 100) / (eta / 100).
 
@@ -48,4 +48,6 @@ Official deployment documentation: https://docs.github.com/en/pages/getting-star
 
 Custom Pout and Qabs sliders are linear, starting at zero. Positive values are required for valid efficiency and LCOE. Bubble sizes use the original fixed absolute-LCOE mapping: area 16+6384u^5 pt^2, with inverse-normalized log10(LCOE) over the fixed reference cost range 0.016732909892269422 to 23.9068864465346 dollars/kWh. The same LCOE always gives the same size. Legend values are fixed at 0.16, 1.1 and 5.4 dollars/kWh.
 
-Custom is hidden by default and after Reset. The This work label is at the upper right of its point. LCOH and CF are rendered above the axes inside the exported SVG; the former chart heading and point count are omitted.
+Custom is hidden by default and after Reset. The Si HJT (model) label is at the upper right of its point. LCOH and CF are rendered above the axes inside the exported SVG; the former chart heading and point count are omitted.
+
+Yi et al. (Nano Letters 2025, DOI 10.1021/acs.nanolett.5c02226) is included as reference 24: the measured six-layer-filter GaSb pair is 20.6% and 0.352 W/cm2 at 1441 degC. The evidence and cost boundary are in data/yi_2025_filtered_gasb.json. Its CPA follows the common GaSb control (35 dollars/cm2 initially); filter manufacturing cost is excluded. The original 114-row compilation is unchanged.

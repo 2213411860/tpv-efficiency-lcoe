@@ -85,7 +85,7 @@
   function renderSelection(){
     const r=current.find(r=>r.id===selected);
     const cellInfo=r.kind==='custom'?'':`<span>${esc(r.cell_type)} · ${fmt(r.emitter_temperature_K,6)} K</span>`;
-    $('selection').innerHTML=`<div class="selection-head"><strong>${esc(r.work)}</strong><span class="badge ${r.kind}">${badge(r)}</span>${cellInfo}</div><div class="selection-values"><span><b>${fmt(r.eta_pair_pct,4)}%</b>η</span><span><b>${fmt(r.p_out_W_cm2,4)}</b>W/cm²</span><span><b>$${fmt(r.lcoe_dollar_kwh,4)}</b>/kWh<sub>e</sub></span><span>Cell $${fmt(r.lcoe_cell_dollar_kwh,3)} + heat $${fmt(r.lcoe_heat_dollar_kwh,3)}</span></div><div class="selection-source">${r.kind==='model'?'Si HJT TPV prediction in this work; fixed at 1600 K.':r.kind==='custom'?'':esc(r.source_title||'')} ${r.source_url?`<a href="${esc(r.source_url)}" target="_blank" rel="noopener noreferrer">Original publication ↗</a>`:''}</div>`;
+    $('selection').innerHTML=`<div class="selection-head"><strong>${esc(r.work)}</strong><span class="badge ${r.kind}">${badge(r)}</span>${cellInfo}</div><div class="selection-values"><span><b>${fmt(r.eta_pair_pct,4)}%</b>η</span><span><b>${fmt(r.p_out_W_cm2,4)}</b>W/cm²</span><span><b>$${fmt(r.lcoe_dollar_kwh,4)}</b>/kWh<sub>e</sub></span><span>Cell $${fmt(r.lcoe_cell_dollar_kwh,3)} + heat $${fmt(r.lcoe_heat_dollar_kwh,3)}</span></div><div class="selection-source">${r.kind==='model'?'Numerical TPV prediction using published Si HJT cell parameters; fixed at 1600 K.':r.kind==='custom'?'':esc(r.source_title||'')} ${r.source_url?`<a href="${esc(r.source_url)}" target="_blank" rel="noopener noreferrer">Original publication ↗</a>`:''}</div>`;
   }
   function renderChart(){
     const x0=83,y0=34,w=605,h=442;
@@ -99,7 +99,7 @@
     $('chart').setAttribute('data-lcoe-max',scale.max_lcoe_dollar_kwh);
     const parts=[`<title>TPV efficiency and electrical power density</title><desc>Bubble areas use a fixed absolute-LCOE scale over the reference range ${scale.min_lcoe_dollar_kwh} to ${scale.max_lcoe_dollar_kwh} dollars per kilowatt-hour, with lower LCOE shown larger. Heat price ${state.lcoh} cents per kWh thermal; capacity factor ${state.cf}.</desc><rect width="920" height="585" fill="white"/><g fill="#111" stroke="none" font-family="'Times New Roman',serif" font-weight="bold"><rect x="${x0}" y="${y0}" width="${w}" height="${h}" fill="none" stroke="#171717" stroke-width="1.2"/>`];
     const xstep=xmax<=50?10:20;
-    parts.push(`<text class="scenario-label" x="${x0}" y="17" font-size="16" font-weight="normal">LCOH <tspan font-weight="bold">${fmt(state.lcoh,5)}</tspan> ¢ kWh<tspan baseline-shift="sub" font-size="11">th</tspan><tspan baseline-shift="super" font-size="11">−1</tspan><tspan dx="24">CF </tspan><tspan font-weight="bold">${state.cf.toFixed(2)}</tspan></text>`);
+    parts.push(`<text class="scenario-label" x="${x0+w/2}" y="17" text-anchor="middle" font-size="16" font-weight="bold">LCOH <tspan>${fmt(state.lcoh,5)}</tspan> ¢ kWh<tspan baseline-shift="sub" font-size="11">th</tspan><tspan baseline-shift="super" font-size="11">−1</tspan><tspan dx="24">CF </tspan><tspan>${state.cf.toFixed(2)}</tspan></text>`);
     for(let t=0;t<=xmax;t+=xstep)parts.push(`<path d="M${x(t)},${y0+h}v6" stroke="#111" stroke-width="1.1"/><text x="${x(t)}" y="${y0+h+25}" text-anchor="middle" font-size="16">${t}</text>`);
     for(let p=Math.ceil(Math.log10(ymin));p<=Math.floor(Math.log10(ymax));p++)parts.push(`<path d="M${x0-6},${y(10**p)}h6" stroke="#111" stroke-width="1.1"/><text x="${x0-13}" y="${y(10**p)+5}" text-anchor="end" font-size="16">10<tspan baseline-shift="super" font-size="11">${p}</tspan></text>`);
     parts.push(`<text x="${x0+w/2}" y="539" text-anchor="middle" font-size="21">TPV efficiency, <tspan font-style="italic">η</tspan> (%)</text><text transform="translate(25,${y0+h/2}) rotate(-90)" text-anchor="middle" font-size="20">Electrical power density (W cm<tspan baseline-shift="super" font-size="12">−2</tspan>)</text>`);
@@ -114,10 +114,10 @@
       parts.push(`<text x="${x(r.eta_pair_pct)+dx}" y="${y(r.p_out_W_cm2)+dy}" font-size="${r.kind==='literature'?12:13}" fill="${r.kind==='literature'?'#111':colorOf(r)}" pointer-events="none">${esc(r.label)}</text>`);
     });
     M.materials.forEach((m,i)=>parts.push(`<circle cx="748" cy="${61+i*32}" r="4.3" fill="${D.colors[m]}" stroke="#111" stroke-width=".5"/><text x="763" y="${66+i*32}" font-size="14">${esc(m==='III-V multijunction'?'III-V multi-junction':m)}</text>`));
-    [{kind:'model',label:'Si HJT cell'},{kind:'custom',label:'Custom'}].forEach((item,i)=>{
+    [{kind:'model',label:'Si HJT TPV'},{kind:'custom',label:'Custom'}].forEach((item,i)=>{
       if(item.kind==='custom'&&!state.customEnabled)return;
       const cy=item.kind==='model'?253:303;
-      parts.push(`<circle cx="748" cy="${cy}" r="4.3" fill="${pointColors[item.kind]}" stroke="#111" stroke-width=".5"/><text x="763" y="${cy+5}" font-size="14">${item.label}${item.kind==='model'?'<tspan x="763" dy="17" font-size="13">(this work)</tspan>':''}</text>`);
+      parts.push(`<circle cx="748" cy="${cy}" r="4.3" fill="${pointColors[item.kind]}" stroke="#111" stroke-width=".5"/><text x="763" y="${cy+5}" font-size="14">${item.label}${item.kind==='model'?'<tspan x="763" dy="17" font-size="13">(model prediction)</tspan>':''}</text>`);
     });
     parts.push('<text x="737" y="352" font-size="16">LCOE ($ kWh<tspan baseline-shift="super" font-size="10">−1</tspan><tspan baseline-shift="sub" font-size="10">e</tspan>)</text>');
     const values=[.16,1.1,5.4],cx=770,bottom=443,radii=values.map(radius);let last=-Infinity;
@@ -125,7 +125,7 @@
       const r=radii[i],top=bottom-2*r,ly=Math.max(top,last+18);last=ly;
       parts.push(`<circle class="size-legend-circle" data-lcoe="${cost}" cx="${cx}" cy="${bottom-r}" r="${r}" fill="none" stroke="#777" stroke-width=".9"/><path d="M${cx},${top}H${cx+radii[0]+8}L846,${ly}" fill="none" stroke="#8a8a8a" stroke-width=".7"/><text x="853" y="${ly+4}" font-size="14">${fmt(cost,3)}</text>`);
     });
-    parts.push('<text x="739" y="482" font-size="11" fill="#82818a" font-weight="normal">Larger bubble = lower LCOE</text></g>');$('chart').innerHTML=parts.join('');
+    parts.push('<text class="bubble-size-note" x="737" y="482" font-size="15" fill="#62616a" font-weight="bold">Larger bubble =<tspan x="737" dy="19">lower LCOE</tspan></text></g>');$('chart').innerHTML=parts.join('');
     $('chart').querySelectorAll('.bubble-point').forEach(node=>{
       const row=current.find(r=>r.id===node.dataset.id);
       node.addEventListener('click',()=>{selected=row.id;renderChart();renderSelection();});
