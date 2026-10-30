@@ -3,7 +3,7 @@
 - dataset.json: 20 literature records and one numerical Si HJT TPV prediction, including original-publication links.
 - bibliography.json: original article titles, publisher URLs, DOIs and metadata verification sources.
 - original_representative_114.csv: unchanged source table (19 studies, six economic scenarios).
-- lin_si_temperature_scan.csv: 51 previously calculated Si temperatures and baseline selection costs.
+- lin_si_temperature_scan.csv: 51 original Si temperatures plus the refined minimum-LCOE point.
 
 LCOE = 1000 * 0.074 * CPA / (8760 * CF * Pout) + (LCOH_cent / 100) / (eta_pct / 100).
 
@@ -19,3 +19,6 @@ Bubble area is A=16+6384u^5 pt^2, where u=(log10(LCOE_max)-log10(LCOE))/(log10(L
 Yi et al. (Nano Letters 2025, DOI 10.1021/acs.nanolett.5c02226) is included as reference 16: the measured six-layer-filter GaSb pair is 20.6% and 0.352 W/cm2 at 1441 degC. The evidence and cost boundary are in data/yi_2025_filtered_gasb.json. Its CPA follows the common GaSb control (35 dollars/cm2 initially); filter manufacturing cost is excluded. The original 114-row compilation is unchanged.
 
 Figure labels, the Ref. column, bibliography keys and current-results exports use the manuscript citation numbers. Original figure numbers are retained as original_table_id and in data/manuscript_reference_numbers.csv; stable record IDs and the original 114-row compilation are unchanged.
+
+
+The Si HJT model point is selected at the minimum baseline LCOE: 1873.736063 K, eta=23.85944805%, Pout=0.7484182526 W/cm2, LCOE=0.04416954243 dollars/kWh. The baseline-selected temperature remains fixed when economic controls change.

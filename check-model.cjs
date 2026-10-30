@@ -41,7 +41,13 @@ assert.ok(M.csv([{...M.customRow(custom),work:'=HYPERLINK("bad")'}]).includes("'
 const scan=fs.readFileSync('./data/lin_si_temperature_scan.csv','utf8').replace(/^\ufeff/,'').trim().split(/\r?\n/);
 const names=scan[0].split(','),ti=names.indexOf('temperature_K'),ci=names.indexOf('selection_lcoe_dollar_kwh');
 const simpleRows=scan.slice(1).map(line=>line.split(','));
-const maxRow=simpleRows.reduce((a,b)=>Number(a[ci])>Number(b[ci])?a:b);
-assert.equal(simpleRows.length,51);assert.equal(Number(maxRow[ti]),D.lin_selection.temperature_K);
-close(Number(maxRow[ci]),D.lin_selection.selected_lcoe_dollar_kwh);
-console.log('PASS: 21 baseline costs including the published Yi six-layer-filter GaSb pair; capital/heat decomposition; heat, CF and zero-cost scenarios; custom CPA independence and Pout/Qabs efficiency; invalid input rejection; monotonic bubble scale; CSV escaping; maximum-LCOE selection over 51 temperatures.');
+const minRow=simpleRows.reduce((a,b)=>Number(a[ci])<Number(b[ci])?a:b);
+assert.equal(simpleRows.length,52);assert.equal(Number(minRow[ti]),D.lin_selection.temperature_K);
+assert.equal(D.lin_selection.objective,'minimum');
+assert.ok(D.lin_selection.temperature_K>1870 && D.lin_selection.temperature_K<1880);
+close(Number(minRow[ci]),D.lin_selection.selected_lcoe_dollar_kwh);
+const lin=D.records.find(r=>r.id==='lin-model');
+close(lin.emitter_temperature_K,D.lin_selection.temperature_K);
+assert.ok(M.bubbleArea(lin.reference_lcoe_dollar_kwh,D.bubble_scale)>M.bubbleArea(.06197805425892411,D.bubble_scale));
+assert.ok(!fs.readFileSync('./app.js','utf8').includes('fixed at 1600 K'));
+console.log('PASS: 21 baseline costs; heat/CF scenarios; custom controls; monotonic bubble scale; minimum-LCOE selection over 51 original temperatures plus a refined point; larger Lin bubble.');

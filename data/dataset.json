@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "records": [
     {
       "id": "ref-1",
@@ -529,13 +529,13 @@
       "label": "Si HJT (model)",
       "work": "Si HJT TPV prediction (modeled)",
       "cell_type": "Si",
-      "emitter_temperature_C": 1326.85,
-      "emitter_temperature_K": 1600.0,
-      "eta_pair_pct": 18.367033139362203,
-      "p_out_W_cm2": 0.22428907091880837,
+      "emitter_temperature_C": 1600.5860628647301,
+      "emitter_temperature_K": 1873.7360628647302,
+      "eta_pair_pct": 23.859448052491015,
+      "p_out_W_cm2": 0.748418252577146,
       "CPA_dollar_cm2": 0.2,
-      "p_abs_W_cm2": 1.2211502490194603,
-      "p_incident_W_cm2": 2.277289392019304,
+      "p_abs_W_cm2": 3.1367794046644275,
+      "p_incident_W_cm2": 5.2621977210273165,
       "kind": "model",
       "source_url": "https://www.nature.com/articles/s41560-023-01255-2",
       "source_file": "lin_si_temperature_scan.csv",
@@ -547,8 +547,8 @@
       "paper_key": "Si HJT numerical TPV prediction",
       "near_field": false,
       "selected_representative": true,
-      "reference_lcoe_dollar_kwh": 0.06197805425892411,
-      "selection_note": "Maximum baseline LCOE among 51 Si temperatures from 1600 to 2100 K (10 K intervals), with LCOH=1 cent/kWh_th, CPA=0.2 $/cm2, CF=1 and CRF=0.074. The selected temperature is fixed during economic parameter changes."
+      "reference_lcoe_dollar_kwh": 0.04416954243126473,
+      "selection_note": "Minimum baseline LCOE over 1600-2100 K, using 51 original 10 K nodes and a continuous model refinement around the best node. LCOH=1 cent/kWh_th, CPA=0.2 $/cm2, CF=1, CRF=0.074. The selected temperature is fixed during economic parameter changes."
     }
   ],
   "colors": {
@@ -589,14 +589,16 @@
     }
   ],
   "lin_selection": {
-    "temperature_K": 1600.0,
-    "count": 51,
+    "temperature_K": 1873.7360628647302,
+    "count": 52,
     "lcoh_cent_per_kwh": 1,
     "cpa_dollar_cm2": 0.2,
     "capacity_factor": 1,
     "crf": 0.074,
-    "selected_lcoe_dollar_kwh": 0.06197805425892411,
-    "note": "Maximum baseline LCOE among 51 Si temperatures from 1600 to 2100 K (10 K intervals), with LCOH=1 cent/kWh_th, CPA=0.2 $/cm2, CF=1 and CRF=0.074. The selected temperature is fixed during economic parameter changes."
+    "selected_lcoe_dollar_kwh": 0.04416954243126473,
+    "note": "Minimum baseline LCOE over 1600-2100 K, using 51 original 10 K nodes and a continuous model refinement around the best node. LCOH=1 cent/kWh_th, CPA=0.2 $/cm2, CF=1, CRF=0.074. The selected temperature is fixed during economic parameter changes.",
+    "original_grid_count": 51,
+    "objective": "minimum"
   },
   "input_hashes": {
     "outputs/tpv_bubble_redraw_2026-10-28/tpv_representative_data_redrawn.csv": "d06fa5c82f406e972148a40814ea31bbe3be9c590cb071b4995b86b4e98ee7fb",
